@@ -1,8 +1,17 @@
-import React from "react";
+import {ChakraProvider} from '@chakra-ui/react'
+import { useDisclosure } from '@chakra-ui/hooks'
+import { AccountModal, ConnectButton, Layout, NavBar } from './components'
 
 const App = () => {
+
+  const {isOpen, onOpen, onClose} = useDisclosure()
   return(
-    <h1>Hello World</h1>
+    <ChakraProvider>
+      <Layout>
+        <NavBar handleOpenModal={onOpen}/>
+        <AccountModal isOpen={isOpen} onClose={onClose}/>
+      </Layout>
+    </ChakraProvider>  
   )
 }
 

@@ -5,9 +5,19 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+//Import DApp Provider
+import {ChainId, Config, DAppProvider} from '@usedapp/core'
+
+const config: Partial<Config> = {
+  readOnlyChainId: ChainId.Mumbai,
+  
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DAppProvider config={config}>
+      <App/>
+    </DAppProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
