@@ -1,6 +1,6 @@
 # Nubis
 
-Foobar is a Python library for dealing with word pluralization.
+Nubis is a Dex for the Polygon Network in development
 
 ## Installation
 
