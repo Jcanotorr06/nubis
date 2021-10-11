@@ -1,6 +1,7 @@
 import {useEffect, useRef} from 'react'
 import { useEthers } from '@usedapp/core'
 import styled from '@emotion/styled'
+// @ts-ignore
 import Jazzicon from '@metamask/jazzicon'
 
 const StyledIdentIcon = styled.div`
