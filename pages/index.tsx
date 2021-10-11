@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { useDisclosure } from '@chakra-ui/hooks'
-import { AccountModal, Layout, NavBar } from '../components'
+import { AccountModal, Footer, Layout, NavBar, SwapWidget } from '../components'
 
 const Home: NextPage = () => {
 
@@ -9,6 +9,8 @@ const Home: NextPage = () => {
     <Layout>
         <NavBar handleOpenModal={onOpen}/>
         <AccountModal isOpen={isOpen} onClose={onClose}/>
+        <SwapWidget/>
+        <Footer/>
     </Layout>
   )
 }

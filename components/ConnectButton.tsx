@@ -22,8 +22,6 @@ const ConnectButton = ({handleOpenModal}:Props) => {
             background="gray.700"
             borderRadius="3xl"
             overflow="hidden"
-            border="2px solid"
-            borderColor="white"
             py="0"
         >
             <Box px="3">
@@ -55,7 +53,7 @@ const ConnectButton = ({handleOpenModal}:Props) => {
             </Button>
         </Box>
     ): (
-        <Button colorScheme="yellow" onClick={handleConnectWallet}>Connect to a wallet</Button>
+        <Button bg="#7508f9" _hover={{bg: '#5b08bf'}} _active={{bg:'#5b08bf'}} color="white" onClick={handleConnectWallet}>Connect to a wallet</Button>
     )
 }
 
