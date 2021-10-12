@@ -1,5 +1,5 @@
 import { ChevronDownIcon, ChevronUpIcon, HamburgerIcon } from '@chakra-ui/icons'
-import { Box, Button, Flex, Text, IconButton, Image, HStack, NumberInput, NumberInputField, VStack, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Flex, Text, IconButton, Image, HStack, NumberInput, NumberInputField, VStack, useColorModeValue, useMediaQuery } from '@chakra-ui/react'
 import { useEthers, ChainId } from '@usedapp/core'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
@@ -17,7 +17,8 @@ interface tokens{
     tokens:token[]
 }
 
-const SwapWidget = () => {
+
+const SwapWidget = (props:any) => {
     const {activateBrowserWallet, account, chainId} = useEthers()
     const [activeTokens, setActiveTokens] = useState<token[]>()
     const [tokens, setTokens] = useState<token[]>()
@@ -28,7 +29,6 @@ const SwapWidget = () => {
             .then(res => {
                 const t:tokens = res.data
                 setTokens(t.tokens)
-                console.log(tokens&&tokens[0].symbol)
                 setActiveTokens(t.tokens.filter(el => (
                     el.symbol == 'MATIC' || el.symbol == 'USDT'
                 )))
@@ -54,13 +54,14 @@ const SwapWidget = () => {
     const bg = useColorModeValue('white', "#24274d")
     const bgDark = useColorModeValue('#f2f6fa', "#15163a")
     const bgBtn = useColorModeValue('#eceefe', '#3a3c65')
+    const [lessThan1400, lessThan1200, lessThan1000, lessThan600] = useMediaQuery(["(max-width: 1400px)", "(max-width: 1200px)", "(max-width: 1000px)", "(max-width: 600px)"])
 
     return (
         <Flex w="100%" justifyContent="center" alignItems="center" h="100%">
         <Head>
             <title>Nubis | Swap</title>
         </Head>
-            <Flex direction="column" justifyContent="space-between" padding="2rem" borderRadius="40px" bg={bg} h="75%" w='30%'>
+            <Flex direction="column" justifyContent="space-between" padding="2rem" borderRadius="40px" bg={bg} h="75%" w={lessThan600 ? '100%':lessThan1000 ? '90%' : lessThan1200 ? '70%' : lessThan1400 ? '50%' : '35%'}>
                 <Flex justifyContent="space-between">
                     <Text fontSize="lg" fontWeight="bold" >Swap</Text>
                     <IconButton aria-label="button" borderRadius="full">
@@ -78,7 +79,7 @@ const SwapWidget = () => {
                             </NumberInput>
                                 
                             <Button size="lg" bg="transparent" _hover={{bg:'transparent', color: 'purple'}} _active={{bg:'transparent'}} w="40%">
-                                <HStack   HStack w="100%" justifyContent="space-between">
+                                <HStack w="100%" justifyContent="space-evenly">
                                     <Text>
                                         {activeTokens && activeTokens[0].symbol} 
                                     </Text>
@@ -104,7 +105,7 @@ const SwapWidget = () => {
                             </NumberInput>
                                 
                             <Button size="lg" bg="transparent" _hover={{bg:'transparent', color: 'purple'}} _active={{bg:'transparent'}} w="40%">
-                                <HStack w="100%" justifyContent="space-between">
+                                <HStack w="100%" justifyContent="space-evenly">
                                     <Text>
                                         {activeTokens && activeTokens[1].symbol} 
                                     </Text>
