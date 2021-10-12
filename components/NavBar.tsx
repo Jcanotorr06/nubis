@@ -19,7 +19,7 @@ const NavBar = ({handleOpenModal}:Props) => {
                 <Flex justifyContent="space-between" alignItems="center">
                     <Flex alignItems="center">
                         <Box>
-                            <Image src={logo} height="50px" width="50px"/>
+                            <Image src={logo} height="50px" width="50px" alt="logo"/>
                         </Box>
                         <Text fontSize="3xl" fontWeight="black">
                             Nubis

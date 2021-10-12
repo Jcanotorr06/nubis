@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5' />
           <meta name='description' content='Description' />
           <meta name='keywords' content='Keywords' />
-          <title>Next.js PWA Example</title>
+          <title>Nubis</title>
 
           <link rel="manifest" href="/manifest.json" />
           <link href='/favicon-16x16.png' rel='icon' type='image/png' sizes='16x16' />

@@ -2,57 +2,63 @@ import { Box, Text, Button } from '@chakra-ui/react'
 import { useEtherBalance, useEthers } from '@usedapp/core'
 import { formatEther } from "@ethersproject/units";
 import IdentIcon from './IdentIcon';
+import {ChainId} from '@usedapp/core'
 
 type Props = {
     handleOpenModal: () => void
 }
 
 const ConnectButton = ({handleOpenModal}:Props) => {
-    const {activateBrowserWallet, account} = useEthers()
+    const {activateBrowserWallet, account, chainId} = useEthers()
     const etherBalance = useEtherBalance(account)
 
     const handleConnectWallet = () => {
         activateBrowserWallet()
     }
 
-    return account ? (
-        <Box
+    return account&&chainId ? (
+        chainId === ChainId.Polygon ?(
+            <Box
             display="flex"
             alignItems="center"
             background="gray.700"
             borderRadius="3xl"
             overflow="hidden"
             py="0"
-        >
-            <Box px="3">
-                <Text color="white" fontSize="md">
-                    {etherBalance && parseFloat(formatEther(etherBalance)).toFixed(5)}
-                </Text>
-            </Box>
-            <Button
-                onClick={handleOpenModal}
-                bg="gray.800"
-                border="1px solid transparent"
-                _hover={{
-                    border: "1px solid",
-                    borderColor: "blue.400",
-                    backgroundColor: "gray.700"
-                }}
-                borderRadius="3xl"
-                m="1px"
-                px={3}
-                height="45px"
             >
-                <Text color="white" fontSize="md" fontWeight="medium" mr="2">
-                    {
-                        account &&
-                            `${account.slice(0,6)}...${account.slice(account.length-4,account.length)}`
-                    }
-                </Text>
-                <IdentIcon/>
-            </Button>
-        </Box>
-    ): (
+                <Box px="3">
+                    <Text color="white" fontSize="md">
+                        {etherBalance && parseFloat(formatEther(etherBalance)).toFixed(5)}
+                    </Text>
+                </Box>
+                <Button
+                    onClick={handleOpenModal}
+                    bg="gray.800"
+                    border="1px solid transparent"
+                    _hover={{
+                        border: "1px solid",
+                        borderColor: "blue.400",
+                        backgroundColor: "gray.700"
+                    }}
+                    borderRadius="3xl"
+                    m="1px"
+                    px={3}
+                    height="45px"
+                >
+                    <Text color="white" fontSize="md" fontWeight="medium" mr="2">
+                        {
+                            account &&
+                                `${account.slice(0,6)}...${account.slice(account.length-4,account.length)}`
+                        }
+                    </Text>
+                    <IdentIcon/>
+                </Button>
+            </Box>
+        ):(
+            <Button colorScheme="red">Wrong Network</Button>
+
+        )
+        ): (
         <Button bg="#7508f9" _hover={{bg: '#5b08bf'}} _active={{bg:'#5b08bf'}} color="white" onClick={handleConnectWallet}>Connect to a wallet</Button>
     )
 }
