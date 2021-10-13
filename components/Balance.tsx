@@ -1,8 +1,7 @@
 import { Box, Text, Button } from '@chakra-ui/react'
 import { useEtherBalance, useEthers } from '@usedapp/core'
 import { formatEther } from "@ethersproject/units";
-import IdentIcon from './IdentIcon';
-import React from 'react'
+import {IdentIcon} from '.';
 
 type Props = {
     handleOpenModal: () => void
@@ -35,7 +34,7 @@ const Balance = ({handleOpenModal}:Props) => {
                         borderColor: "blue.400",
                         backgroundColor: "gray.700"
                     }}
-                    borderRadius="3xl"
+                    borderRadius="xl"
                     m="1px"
                     px={3}
                     height="45px"

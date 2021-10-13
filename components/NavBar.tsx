@@ -1,14 +1,11 @@
 import { Flex, Container, Box, Text, IconButton, useColorMode, HStack, Icon, Link, useMediaQuery } from '@chakra-ui/react';
-import { ConnectButton } from '.';
+import { ConnectButton, InfoMenu, NavMenu } from '.';
 import Image from 'next/image'
 import logo from '../public/apple-touch-icon.png'
-import { HamburgerIcon, MoonIcon } from '@chakra-ui/icons';
-import {FaSun, FaEllipsisH} from 'react-icons/fa'
+import { MoonIcon } from '@chakra-ui/icons';
+import {FaSun,} from 'react-icons/fa'
 import NLink from 'next/link'
 import { useRouter } from 'next/router';
-import InfoMenu from './InfoMenu';
-import NavMenu from './NavMenu'
-
 interface Props{
     handleOpenModal: () => void
 }

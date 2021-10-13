@@ -1,9 +1,7 @@
-import { Box, Text, Button } from '@chakra-ui/react'
-import { useEtherBalance, useEthers } from '@usedapp/core'
-import { formatEther } from "@ethersproject/units";
-import IdentIcon from './IdentIcon';
+import { Button } from '@chakra-ui/react'
+import { useEthers } from '@usedapp/core'
 import {ChainId} from '@usedapp/core'
-import Balance from './Balance';
+import {Balance} from '.';
 
 type Props = {
     handleOpenModal: () => void
@@ -11,7 +9,6 @@ type Props = {
 
 const ConnectButton = ({handleOpenModal}:Props) => {
     const {activateBrowserWallet, account, chainId} = useEthers()
-    const etherBalance = useEtherBalance(account)
 
     const handleConnectWallet = () => {
         activateBrowserWallet()

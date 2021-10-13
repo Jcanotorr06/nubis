@@ -1,13 +1,15 @@
-import axios from "axios";
-import { createContext } from "react";
+import { createContext, Dispatch, SetStateAction } from "react";
+import { Tokens } from './../tokens/Tokens';
 
 interface token{
-    symbol:string
+    name: string
     address:string
+    symbol:string
     decimals:Number
-    img:string
     network:Number
+    img:string
 }
+
 
 interface context{
     fetched: boolean
@@ -15,4 +17,24 @@ interface context{
     error: string | null
 }
 
-export const tokenContext = createContext<context>({fetched: false, tokens: [], error: null})
+interface activeContext{
+    activeTokens: token[]
+    setActiveTokens: Dispatch<SetStateAction<token[]>>
+}
+
+interface settings{
+    slippage: number
+    deadline: number
+}
+
+interface settingsContext{
+    settings:settings
+    setSettings: Dispatch<SetStateAction<settings>>
+}
+
+
+export const tokenContext = createContext<token[]>(Tokens)
+
+export const activeTokenContext = createContext<activeContext>({activeTokens: [], setActiveTokens: () => {}})
+
+export const settingsContext = createContext<settingsContext>({settings: {slippage: 1000, deadline: 60}, setSettings: () => {}})

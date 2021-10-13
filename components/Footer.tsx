@@ -1,7 +1,6 @@
 import { Container, Box, Text, useMediaQuery, HStack, IconButton, Icon } from '@chakra-ui/react';
-import { ConnectButton } from '.';
+import { ConnectButton, InfoMenu } from '.';
 import { FaEllipsisH } from 'react-icons/fa';
-import InfoMenu from './InfoMenu';
 
 
 interface Props{
