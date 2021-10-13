@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import {ChainId, Config, DAppProvider} from '@usedapp/core'
 import { ChakraProvider } from '@chakra-ui/react'
+import { Layout } from '../components'
 
 const config: Partial<Config> = {
   readOnlyChainId: ChainId.Mumbai,
@@ -27,7 +28,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           <link rel="apple-touch-icon" href="/apple-icon.png"></link>
           <meta name="theme-color" content="#444342"/>
         </Head>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </DAppProvider>
     </ChakraProvider>
     ) 
