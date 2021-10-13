@@ -1,17 +1,31 @@
-import { Flex, Container, Box, Text, Link } from '@chakra-ui/react';
+import { Container, Box, Text, useMediaQuery, HStack, IconButton, Icon } from '@chakra-ui/react';
+import { ConnectButton } from '.';
+import { FaEllipsisH } from 'react-icons/fa';
+import InfoMenu from './InfoMenu';
 
-const Footer = () => {
+
+interface Props{
+    handleOpenModal: () => void
+}
+
+const Footer = ({handleOpenModal}:Props) => {
+    const [lessThan900] = useMediaQuery(['(max-width: 900px)'])
+
+
     return (
         <Box w="100%" py="1rem" bg="transparent" as="footer">
             <Container maxW="container.xl" as="nav">
-                <Flex justifyContent="space-between" alignItems="center">
-                    <Text fontSize="smaller" fontWeight="medium" color="gray">
-                       © 2021 Nubis - All Rights Reserved
-                    </Text>
-                    <Link fontSize="smaller" fontWeight="medium" color="gray" href="https://github.com/Jcanotorr06/Nubis" target="_blank" rel="noreferrer">
-                        Github Repo
-                    </Link>
-                </Flex>        
+                {
+                    lessThan900 && (
+                        <HStack spacing={2} justifyContent="space-between" w="full">
+                            <ConnectButton handleOpenModal={handleOpenModal}/>
+                            <InfoMenu/>
+                        </HStack>
+                    )
+                }
+                <Text fontSize="smaller" fontWeight="medium" color="gray" textAlign="center" marginTop="1rem">
+                    © 2021 Nubis - All Rights Reserved
+                </Text>
             </Container>
         </Box>
     )

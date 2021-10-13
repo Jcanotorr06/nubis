@@ -3,6 +3,7 @@ import { useEtherBalance, useEthers } from '@usedapp/core'
 import { formatEther } from "@ethersproject/units";
 import IdentIcon from './IdentIcon';
 import {ChainId} from '@usedapp/core'
+import Balance from './Balance';
 
 type Props = {
     handleOpenModal: () => void
@@ -18,42 +19,7 @@ const ConnectButton = ({handleOpenModal}:Props) => {
 
     return account&&chainId ? (
         chainId === ChainId.Polygon ?(
-            <Box
-            display="flex"
-            alignItems="center"
-            background="gray.700"
-            borderRadius="3xl"
-            overflow="hidden"
-            py="0"
-            >
-                <Box px="3">
-                    <Text color="white" fontSize="md">
-                        {etherBalance && parseFloat(formatEther(etherBalance)).toFixed(5)}
-                    </Text>
-                </Box>
-                <Button
-                    onClick={handleOpenModal}
-                    bg="gray.800"
-                    border="1px solid transparent"
-                    _hover={{
-                        border: "1px solid",
-                        borderColor: "blue.400",
-                        backgroundColor: "gray.700"
-                    }}
-                    borderRadius="3xl"
-                    m="1px"
-                    px={3}
-                    height="45px"
-                >
-                    <Text color="white" fontSize="md" fontWeight="medium" mr="2">
-                        {
-                            account &&
-                                `${account.slice(0,6)}...${account.slice(account.length-4,account.length)}`
-                        }
-                    </Text>
-                    <IdentIcon/>
-                </Button>
-            </Box>
+            <Balance handleOpenModal={handleOpenModal}/>
         ):(
             <Button colorScheme="red">Wrong Network</Button>
 

@@ -3,6 +3,8 @@ import { tokenContext } from "../context/Context"
 import { ReactNode, useEffect, useState } from "react"
 import { NavBar, Footer, AccountModal } from "."
 import axios from "axios"
+import NextNprogress from 'nextjs-progressbar';
+
 
 type Props = {
     children?: ReactNode
@@ -47,6 +49,13 @@ const Layout:React.FC<Props> = ({children}:Props) => {
 
     return (
         <tokenContext.Provider value={response}>
+            <NextNprogress
+                color="#7f84fe"
+                startPosition={0.3}
+                stopDelayMs={200}
+                height={5}
+                showOnShallow={true}
+            />
             <Flex
                 flexDir="column"
                 alignItems="center"
@@ -57,7 +66,7 @@ const Layout:React.FC<Props> = ({children}:Props) => {
                 <NavBar handleOpenModal={onOpen}/>
                     <AccountModal isOpen={isOpen} onClose={onClose}/>
                 {children}
-                <Footer/>
+                <Footer handleOpenModal={onOpen}/>
             </Flex>
         </tokenContext.Provider>
     )
