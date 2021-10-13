@@ -1,5 +1,10 @@
-import { GetStaticProps } from "next"
+import { useRouter } from "next/router"
+import { useEffect } from "react"
 const _error = () => {
+    const router = useRouter()
+    useEffect(() => {
+        router.replace('/')
+    })
 
     return (
         <div>
@@ -7,14 +12,5 @@ const _error = () => {
         </div>
     )
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: true,
-      },
-    };
-  };
 
 export default _error
