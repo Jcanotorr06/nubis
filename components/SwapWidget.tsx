@@ -1,9 +1,11 @@
-import { ChevronDownIcon, ChevronUpIcon, HamburgerIcon } from '@chakra-ui/icons'
-import { Box, Button, Flex, Text, IconButton, Image, HStack, NumberInput, NumberInputField, VStack, useColorModeValue } from '@chakra-ui/react'
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
+import { Box, Button, Flex, Text, IconButton, Icon, Image, HStack, NumberInput, NumberInputField, VStack, useColorModeValue, useMediaQuery } from '@chakra-ui/react'
 import { useEthers, ChainId } from '@usedapp/core'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Head from 'next/head'
+import { tokenContext } from '../context/Context'
+import {MdTune} from 'react-icons/md'
 
 interface token{
     symbol:string
@@ -17,29 +19,11 @@ interface tokens{
     tokens:token[]
 }
 
+
 const SwapWidget = () => {
     const {activateBrowserWallet, account, chainId} = useEthers()
-    const [activeTokens, setActiveTokens] = useState<token[]>()
-    const [tokens, setTokens] = useState<token[]>()
-
-    useEffect(() => {
-        const fetchTokens = async () => {
-            await axios.get('https://apiv5.paraswap.io/tokens/137')
-            .then(res => {
-                const t:tokens = res.data
-                setTokens(t.tokens)
-                console.log(tokens&&tokens[0].symbol)
-                setActiveTokens(t.tokens.filter(el => (
-                    el.symbol == 'MATIC' || el.symbol == 'USDT'
-                )))
-            })
-            .catch(err => {
-                console.log(err)
-            })
-        }
-        fetchTokens()
-
-    }, [])
+    const {error, tokens, fetched} = useContext(tokenContext)
+    const [activeTokens, setActiveTokens] = useState<token[]>([])
     
     const handleConnectWallet = () => {
         activateBrowserWallet()
@@ -51,20 +35,31 @@ const SwapWidget = () => {
         )
     }
 
+    useEffect(() => {
+        let x:token[] = tokens.filter(el => {
+            return(
+                el.symbol === 'MATIC'
+                || el.symbol === 'USDT'
+            )
+        })
+        setActiveTokens([x[0], x[1]])      
+    }, [fetched])
+
     const bg = useColorModeValue('white', "#24274d")
     const bgDark = useColorModeValue('#f2f6fa', "#15163a")
     const bgBtn = useColorModeValue('#eceefe', '#3a3c65')
+    const [lessThan1400, lessThan1200, lessThan1000, lessThan600] = useMediaQuery(["(max-width: 1400px)", "(max-width: 1200px)", "(max-width: 1000px)", "(max-width: 600px)"])
 
-    return (
+    return activeTokens[0] ?(
         <Flex w="100%" justifyContent="center" alignItems="center" h="100%">
         <Head>
             <title>Nubis | Swap</title>
         </Head>
-            <Flex direction="column" justifyContent="space-between" padding="2rem" borderRadius="40px" bg={bg} h="75%" w='30%'>
+            <Flex direction="column" justifyContent="space-between" padding="2rem" borderRadius="40px" bg={bg} h="75%" w={lessThan600 ? '100%':lessThan1000 ? '90%' : lessThan1200 ? '70%' : lessThan1400 ? '50%' : '35%'}>
                 <Flex justifyContent="space-between">
                     <Text fontSize="lg" fontWeight="bold" >Swap</Text>
                     <IconButton aria-label="button" borderRadius="full">
-                        <HamburgerIcon/>
+                        <Icon as={MdTune}/>
                     </IconButton>
                 </Flex>
                 <VStack direction="column" justifyContent="space-between" alignItems="center" spacing="1rem" h="100%" paddingY="1rem">
@@ -78,11 +73,11 @@ const SwapWidget = () => {
                             </NumberInput>
                                 
                             <Button size="lg" bg="transparent" _hover={{bg:'transparent', color: 'purple'}} _active={{bg:'transparent'}} w="40%">
-                                <HStack   HStack w="100%" justifyContent="space-between">
+                                <HStack w="100%" justifyContent="space-evenly">
                                     <Text>
-                                        {activeTokens && activeTokens[0].symbol} 
+                                        {activeTokens[0].symbol} 
                                     </Text>
-                                    <Image alt="token image" boxSize="25px" src={activeTokens && activeTokens[0].img} borderRadius="full"/>
+                                    <Image alt="token image" boxSize="25px" src={activeTokens[0].img} borderRadius="full"/>
                                     <ChevronDownIcon/>
                                 </HStack>
                             </Button>
@@ -104,11 +99,11 @@ const SwapWidget = () => {
                             </NumberInput>
                                 
                             <Button size="lg" bg="transparent" _hover={{bg:'transparent', color: 'purple'}} _active={{bg:'transparent'}} w="40%">
-                                <HStack w="100%" justifyContent="space-between">
+                                <HStack w="100%" justifyContent="space-evenly">
                                     <Text>
-                                        {activeTokens && activeTokens[1].symbol} 
+                                        {activeTokens[1].symbol} 
                                     </Text>
-                                    <Image alt="token image" boxSize="25px" src={activeTokens && activeTokens[1].img} borderRadius="full" />
+                                    <Image alt="token image" boxSize="25px" src={activeTokens[1].img} borderRadius="full" />
                                     <ChevronDownIcon/>
                                 </HStack>
                             </Button>
@@ -136,7 +131,7 @@ const SwapWidget = () => {
                 }
             </Flex>
         </Flex>
-    )
+    ) : <h1>Loading</h1>
 }
 
 export default SwapWidget
