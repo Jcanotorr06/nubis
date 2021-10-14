@@ -4,6 +4,9 @@ import { ReactNode, useEffect, useState } from "react"
 import { NavBar, Footer, AccountModal } from "."
 import NextNprogress from 'nextjs-progressbar';
 import { Tokens } from "../tokens/Tokens"
+import { useEthers, useTokenBalance } from '@usedapp/core';
+import { BigNumber } from "ethers";
+import {useTokensBalance} from '../hooks'
 
 
 type Props = {
@@ -17,7 +20,8 @@ interface token{
     symbol:string
     decimals:Number
     network:Number
-    img:string
+    img:string,
+    balance: BigNumber | undefined
 }
 
 interface settings{
@@ -26,24 +30,28 @@ interface settings{
 }
 
 
-const Layout:React.FC<Props> = ({children}:Props) => {
+const Layout = ({children}:Props) => {
     const bg = useColorModeValue('#f2f6fa', "#15163a")
     const [activeTokens, setActiveTokens] = useState<token[]>([])
     const [settings, setSettings] = useState<settings>({slippage: 1000, deadline: 60})
+    const {account} = useEthers()
     const accountModal = useDisclosure()
-
+    const tokens:token[] = useTokensBalance(Tokens, account)
+    
     useEffect(() => {
+        let isDone = false;
         let x:token[] = Tokens.filter(el => {
             return(
                 el.symbol === 'MATIC'
                 || el.symbol === 'USDT'
-            )
-        })
-        setActiveTokens([x[0], x[1]])
-    }, [])
+                )
+            })
+            setActiveTokens([x[0], x[1]])
+            return () => {isDone = true}
+        }, [])
 
     return (
-        <tokenContext.Provider value={Tokens}>
+        <tokenContext.Provider value={tokens}>
             <activeTokenContext.Provider value={{activeTokens, setActiveTokens}}>
                 <settingsContext.Provider value={{settings, setSettings}}>
                     <NextNprogress

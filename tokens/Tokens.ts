@@ -1,3 +1,5 @@
+import { BigNumber } from 'ethers';
+
 interface token{
     name: string
     address:string
@@ -5,6 +7,7 @@ interface token{
     decimals:Number
     network:Number
     img:string
+    balance:BigNumber | undefined
 }
 
 export const Tokens:token[] = [
@@ -14,7 +17,8 @@ export const Tokens:token[] = [
         "symbol": "$ANRX",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/13415/small/anrkey.jpg?1608311301"
+        "img": "https://assets.coingecko.com/coins/images/13415/small/anrkey.jpg?1608311301",
+        "balance": undefined
         },
         {
         "name": "decentral.games",
@@ -22,7 +26,8 @@ export const Tokens:token[] = [
         "symbol": "$DG",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/dg.jpg"
+        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/dg.jpg",
+        "balance": undefined
         },
         {
         "name": "Aave",
@@ -30,7 +35,8 @@ export const Tokens:token[] = [
         "symbol": "AAVE",
         "decimals": 18,
         "network": 137,
-        "img": "https://etherscan.io/token/images/aave_32.png"
+        "img": "https://etherscan.io/token/images/aave_32.png",
+        "balance": undefined
         },
         {
         "name": "Adamant",
@@ -38,7 +44,8 @@ export const Tokens:token[] = [
         "symbol": "ADDY",
         "decimals": 18,
         "network": 137,
-        "img": "https://adamant.finance/img/adamant.png"
+        "img": "https://adamant.finance/img/adamant.png",
+        "balance": undefined
         },
         {
         "name": "Adshares",
@@ -46,7 +53,8 @@ export const Tokens:token[] = [
         "symbol": "ADS",
         "decimals": 11,
         "network": 137,
-        "img": "https://s2.coinmarketcap.com/static/img/coins/64x64/1883.png"
+        "img": "https://s2.coinmarketcap.com/static/img/coins/64x64/1883.png",
+        "balance": undefined
         },
         {
         "name": "AGA Token",
@@ -54,7 +62,8 @@ export const Tokens:token[] = [
         "symbol": "AGA",
         "decimals": 4,
         "network": 137,
-        "img": "https://i.imgur.com/R0aQlym.png"
+        "img": "https://i.imgur.com/R0aQlym.png",
+        "balance": undefined
         },
         {
         "name": "AGA Rewards",
@@ -62,7 +71,8 @@ export const Tokens:token[] = [
         "symbol": "AGAr",
         "decimals": 8,
         "network": 137,
-        "img": "https://i.imgur.com/06BkcTT.png"
+        "img": "https://i.imgur.com/06BkcTT.png",
+        "balance": undefined
         },
         {
         "name": "Akash Network",
@@ -70,7 +80,8 @@ export const Tokens:token[] = [
         "symbol": "AKT",
         "decimals": 6,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/12785/small/akash-logo.png?1615447676"
+        "img": "https://assets.coingecko.com/coins/images/12785/small/akash-logo.png?1615447676",
+        "balance": undefined
         },
         {
         "name": "Aluna",
@@ -78,7 +89,8 @@ export const Tokens:token[] = [
         "symbol": "ALN",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14379/small/uaLoLU8c_400x400_%281%29.png?1627873106"
+        "img": "https://assets.coingecko.com/coins/images/14379/small/uaLoLU8c_400x400_%281%29.png?1627873106",
+        "balance": undefined
         },
         {
         "name": "Angel",
@@ -86,7 +98,8 @@ export const Tokens:token[] = [
         "symbol": "ANGEL",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/17739/small/Polylauncher_-_200_x_200.png?1629121147"
+        "img": "https://assets.coingecko.com/coins/images/17739/small/Polylauncher_-_200_x_200.png?1629121147",
+        "balance": undefined
         },
         {
         "name": "Anyswap",
@@ -94,7 +107,8 @@ export const Tokens:token[] = [
         "symbol": "ANY",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/anyswap/Brand-assets/master/logo/c-128-white.svg"
+        "img": "https://raw.githubusercontent.com/anyswap/Brand-assets/master/logo/c-128-white.svg",
+        "balance": undefined
         },
         {
         "name": "ARIANEE",
@@ -102,7 +116,8 @@ export const Tokens:token[] = [
         "symbol": "ARIA20",
         "decimals": 18,
         "network": 137,
-        "img": "https://aria.fyi/images/Aria_Logo_256.png"
+        "img": "https://aria.fyi/images/Aria_Logo_256.png",
+        "balance": undefined
         },
         {
         "name": "Cosmos",
@@ -110,7 +125,8 @@ export const Tokens:token[] = [
         "symbol": "ATOM",
         "decimals": 6,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/1481/small/cosmos_hub.png?1555657960"
+        "img": "https://assets.coingecko.com/coins/images/1481/small/cosmos_hub.png?1555657960",
+        "balance": undefined
         },
         {
         "name": "Avalanche Token",
@@ -118,7 +134,8 @@ export const Tokens:token[] = [
         "symbol": "AVAX",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/12559/small/coin-round-red.png?1604021818"
+        "img": "https://assets.coingecko.com/coins/images/12559/small/coin-round-red.png?1604021818",
+        "balance": undefined
         },
         {
         "name": "BABYQUICK",
@@ -126,7 +143,8 @@ export const Tokens:token[] = [
         "symbol": "BABYQUICK",
         "decimals": 18,
         "network": 137,
-        "img": "https://pbs.twimg.com/profile_images/1428328610444742660/4fa6uMzp_400x400.jpg"
+        "img": "https://pbs.twimg.com/profile_images/1428328610444742660/4fa6uMzp_400x400.jpg",
+        "balance": undefined
         },
         {
         "name": "Bella",
@@ -134,7 +152,8 @@ export const Tokens:token[] = [
         "symbol": "BEL",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/12478/small/Bella.png?1602230054"
+        "img": "https://assets.coingecko.com/coins/images/12478/small/Bella.png?1602230054",
+        "balance": undefined
         },
         {
         "name": "beefy.finance",
@@ -142,7 +161,8 @@ export const Tokens:token[] = [
         "symbol": "BIFI",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png"
+        "img": "https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png",
+        "balance": undefined
         },
         {
         "name": "BLOK",
@@ -150,7 +170,8 @@ export const Tokens:token[] = [
         "symbol": "BLOK",
         "decimals": 18,
         "network": 137,
-        "img": "https://pbs.twimg.com/profile_images/1443182135410634754/l1wH-p3b_400x400.jpg"
+        "img": "https://pbs.twimg.com/profile_images/1443182135410634754/l1wH-p3b_400x400.jpg",
+        "balance": undefined
         },
         {
         "name": "Binance Token",
@@ -158,7 +179,8 @@ export const Tokens:token[] = [
         "symbol": "BNB",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png?1547034615"
+        "img": "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png?1547034615",
+        "balance": undefined
         },
         {
         "name": "Cryptocurrency Top Tokens Index",
@@ -166,7 +188,8 @@ export const Tokens:token[] = [
         "symbol": "CC10",
         "decimals": 18,
         "network": 137,
-        "img": "https://etherscan.io/token/images/indexed-cc10_32.png"
+        "img": "https://etherscan.io/token/images/indexed-cc10_32.png",
+        "balance": undefined
         },
         {
         "name": "Celsius",
@@ -174,7 +197,8 @@ export const Tokens:token[] = [
         "symbol": "CEL",
         "decimals": 4,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/3263/small/CEL_logo.png?1609598753"
+        "img": "https://assets.coingecko.com/coins/images/3263/small/CEL_logo.png?1609598753",
+        "balance": undefined
         },
         {
         "name": "ChainGuardians Governance Token",
@@ -182,7 +206,8 @@ export const Tokens:token[] = [
         "symbol": "CGG",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14326/small/cgg_logo.png?1615429976"
+        "img": "https://assets.coingecko.com/coins/images/14326/small/cgg_logo.png?1615429976",
+        "balance": undefined
         },
         {
         "name": "loserchick",
@@ -190,7 +215,8 @@ export const Tokens:token[] = [
         "symbol": "CHICK",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.loli.net/2021/07/28/K83jnTJzG9bq7Xt.png"
+        "img": "https://i.loli.net/2021/07/28/K83jnTJzG9bq7Xt.png",
+        "balance": undefined
         },
         {
         "name": "Crosschain IOTX",
@@ -198,7 +224,8 @@ export const Tokens:token[] = [
         "symbol": "CIOTX",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/iotexproject/iotex-token-metadata/master/images/io1nxetpma4de3wx6tqcgxdtj5wc64a24t64dc76s.png"
+        "img": "https://raw.githubusercontent.com/iotexproject/iotex-token-metadata/master/images/io1nxetpma4de3wx6tqcgxdtj5wc64a24t64dc76s.png",
+        "balance": undefined
         },
         {
         "name": "Centaur Token",
@@ -206,7 +233,8 @@ export const Tokens:token[] = [
         "symbol": "CNTR",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/12743/small/logo_%2898%29.png?1602630445"
+        "img": "https://assets.coingecko.com/coins/images/12743/small/logo_%2898%29.png?1602630445",
+        "balance": undefined
         },
         {
         "name": "Furucombo",
@@ -214,7 +242,8 @@ export const Tokens:token[] = [
         "symbol": "COMBO",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/13629/small/COMBO_token_ol.png?1610701537"
+        "img": "https://assets.coingecko.com/coins/images/13629/small/COMBO_token_ol.png?1610701537",
+        "balance": undefined
         },
         {
         "name": "Compound",
@@ -222,7 +251,8 @@ export const Tokens:token[] = [
         "symbol": "COMP",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/logo.png",
+        "balance": undefined
         },
         {
         "name": "CRV",
@@ -230,7 +260,8 @@ export const Tokens:token[] = [
         "symbol": "CRV",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/12124/small/Curve.png?1597369484"
+        "img": "https://assets.coingecko.com/coins/images/12124/small/Curve.png?1597369484",
+        "balance": undefined
         },
         {
         "name": "DeFi11",
@@ -238,7 +269,8 @@ export const Tokens:token[] = [
         "symbol": "D11",
         "decimals": 18,
         "network": 137,
-        "img": "https://s2.coinmarketcap.com/static/img/coins/64x64/11147.png"
+        "img": "https://s2.coinmarketcap.com/static/img/coins/64x64/11147.png",
+        "balance": undefined
         },
         {
         "name": "Dai Stablecoin",
@@ -246,7 +278,8 @@ export const Tokens:token[] = [
         "symbol": "DAI",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+        "balance": undefined
         },
         {
         "name": "DEFI Top 5 Tokens Index",
@@ -254,7 +287,8 @@ export const Tokens:token[] = [
         "symbol": "DEFI5",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/uVGtugL.png"
+        "img": "https://i.imgur.com/uVGtugL.png",
+        "balance": undefined
         },
         {
         "name": "DEGEN Index",
@@ -262,7 +296,8 @@ export const Tokens:token[] = [
         "symbol": "DEGEN",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/DEGEN_LOGO.png"
+        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/DEGEN_LOGO.png",
+        "balance": undefined
         },
         {
         "name": "DeHive.finance",
@@ -270,7 +305,8 @@ export const Tokens:token[] = [
         "symbol": "DHV",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14926/small/logo_200x200.png?1626181831"
+        "img": "https://assets.coingecko.com/coins/images/14926/small/logo_200x200.png?1626181831",
+        "balance": undefined
         },
         {
         "name": "DinoSwap",
@@ -278,7 +314,8 @@ export const Tokens:token[] = [
         "symbol": "DINO",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/17103/small/DINO.png?1626244014"
+        "img": "https://assets.coingecko.com/coins/images/17103/small/DINO.png?1626244014",
+        "balance": undefined
         },
         {
         "name": "Dark Matter Token",
@@ -286,7 +323,8 @@ export const Tokens:token[] = [
         "symbol": "DMT",
         "decimals": 18,
         "network": 137,
-        "img": "https://darkmatter.finance/i/favicon/512x512.png"
+        "img": "https://darkmatter.finance/i/favicon/512x512.png",
+        "balance": undefined
         },
         {
         "name": "DinoX Coin",
@@ -294,7 +332,8 @@ export const Tokens:token[] = [
         "symbol": "DNXC",
         "decimals": 18,
         "network": 137,
-        "img": "https://dinox.io/images/asset_icon_dnx.png"
+        "img": "https://dinox.io/images/asset_icon_dnx.png",
+        "balance": undefined
         },
         {
         "name": "Digital Reserve Currency",
@@ -302,7 +341,8 @@ export const Tokens:token[] = [
         "symbol": "DRC",
         "decimals": 0,
         "network": 137,
-        "img": "https://pbs.twimg.com/profile_images/1318783238291292160/R4DxXdRA_400x400.jpg"
+        "img": "https://pbs.twimg.com/profile_images/1318783238291292160/R4DxXdRA_400x400.jpg",
+        "balance": undefined
         },
         {
         "name": "DSLA",
@@ -310,7 +350,8 @@ export const Tokens:token[] = [
         "symbol": "DSLA",
         "decimals": 18,
         "network": 137,
-        "img": "https://storage.googleapis.com/stacktical-public/dsla.png"
+        "img": "https://storage.googleapis.com/stacktical-public/dsla.png",
+        "balance": undefined
         },
         {
         "name": "LoserchickEgg",
@@ -318,7 +359,8 @@ export const Tokens:token[] = [
         "symbol": "EGG",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.loli.net/2021/07/28/bGfpAaC6idUZVNP.png"
+        "img": "https://i.loli.net/2021/07/28/bGfpAaC6idUZVNP.png",
+        "balance": undefined
         },
         {
         "name": "Eleven.finance",
@@ -326,7 +368,8 @@ export const Tokens:token[] = [
         "symbol": "ELE",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14541/small/eleven_finance_logo.png?1616895791"
+        "img": "https://assets.coingecko.com/coins/images/14541/small/eleven_finance_logo.png?1616895791",
+        "balance": undefined
         },
         {
         "name": "Elementeum",
@@ -334,7 +377,8 @@ export const Tokens:token[] = [
         "symbol": "ELET",
         "decimals": 18,
         "network": 137,
-        "img": "https://etherlegends.com/ELET.png"
+        "img": "https://etherlegends.com/ELET.png",
+        "balance": undefined
         },
         {
         "name": "EthermonToken",
@@ -342,7 +386,8 @@ export const Tokens:token[] = [
         "symbol": "EMON",
         "decimals": 18,
         "network": 137,
-        "img": "https://s2.coinmarketcap.com/static/img/coins/64x64/9651.png"
+        "img": "https://s2.coinmarketcap.com/static/img/coins/64x64/9651.png",
+        "balance": undefined
         },
         {
         "name": "Ethernity Chain",
@@ -350,7 +395,8 @@ export const Tokens:token[] = [
         "symbol": "ERN",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14238/small/ethernity_logo.png?1615189750"
+        "img": "https://assets.coingecko.com/coins/images/14238/small/ethernity_logo.png?1615189750",
+        "balance": undefined
         },
         {
         "name": "SifChain",
@@ -358,7 +404,8 @@ export const Tokens:token[] = [
         "symbol": "EROWAN",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14044/small/EROWAN.png?1614656300"
+        "img": "https://assets.coingecko.com/coins/images/14044/small/EROWAN.png?1614656300",
+        "balance": undefined
         },
         {
         "name": "Ether",
@@ -366,7 +413,8 @@ export const Tokens:token[] = [
         "symbol": "ETH",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+        "balance": undefined
         },
         {
         "name": "ETHA",
@@ -374,7 +422,8 @@ export const Tokens:token[] = [
         "symbol": "ETHA",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14141/small/etha_logo200x200.png?1614646986"
+        "img": "https://assets.coingecko.com/coins/images/14141/small/etha_logo200x200.png?1614646986",
+        "balance": undefined
         },
         {
         "name": "EASY V2",
@@ -382,7 +431,8 @@ export const Tokens:token[] = [
         "symbol": "EZ",
         "decimals": 18,
         "network": 137,
-        "img": "https://etherscan.io/token/images/easyfi_32.png?v=2"
+        "img": "https://etherscan.io/token/images/easyfi_32.png?v=2",
+        "balance": undefined
         },
         {
         "name": "Fear NFTs",
@@ -390,7 +440,8 @@ export const Tokens:token[] = [
         "symbol": "FEAR",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/15825/small/fear-logo-400-400.png?1625552865"
+        "img": "https://assets.coingecko.com/coins/images/15825/small/fear-logo-400-400.png?1625552865",
+        "balance": undefined
         },
         {
         "name": "Future of Finance Fund",
@@ -398,7 +449,8 @@ export const Tokens:token[] = [
         "symbol": "FFF",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/15761/small/xg1NFl0.png?1621825451"
+        "img": "https://assets.coingecko.com/coins/images/15761/small/xg1NFl0.png?1621825451",
+        "balance": undefined
         },
         {
         "name": "Fish",
@@ -406,7 +458,8 @@ export const Tokens:token[] = [
         "symbol": "FISH",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/ncleoTN.png"
+        "img": "https://i.imgur.com/ncleoTN.png",
+        "balance": undefined
         },
         {
         "name": "The Force Token",
@@ -414,7 +467,8 @@ export const Tokens:token[] = [
         "symbol": "FOR",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/8242/small/for.png?1606195375"
+        "img": "https://assets.coingecko.com/coins/images/8242/small/for.png?1606195375",
+        "balance": undefined
         },
         {
         "name": "Frax",
@@ -422,7 +476,8 @@ export const Tokens:token[] = [
         "symbol": "FRAX",
         "decimals": 18,
         "network": 137,
-        "img": "https://avatars.githubusercontent.com/u/56005256?s=200&v=4"
+        "img": "https://avatars.githubusercontent.com/u/56005256?s=200&v=4",
+        "balance": undefined
         },
         {
         "name": "Fusion",
@@ -430,7 +485,8 @@ export const Tokens:token[] = [
         "symbol": "FSN",
         "decimals": 18,
         "network": 137,
-        "img": "https://cryptologos.cc/logos/fusion-fsn-logo.png?v=010"
+        "img": "https://cryptologos.cc/logos/fusion-fsn-logo.png?v=010",
+        "balance": undefined
         },
         {
         "name": "FalconSwap Token",
@@ -438,7 +494,8 @@ export const Tokens:token[] = [
         "symbol": "FSW",
         "decimals": 18,
         "network": 137,
-        "img": "https://falconswap.com/assets/img/logo/logo.png"
+        "img": "https://falconswap.com/assets/img/logo/logo.png",
+        "balance": undefined
         },
         {
         "name": "Frax Share",
@@ -446,7 +503,8 @@ export const Tokens:token[] = [
         "symbol": "FXS",
         "decimals": 18,
         "network": 137,
-        "img": "https://avatars.githubusercontent.com/u/56005256?s=200&v=4"
+        "img": "https://avatars.githubusercontent.com/u/56005256?s=200&v=4",
+        "balance": undefined
         },
         {
         "name": "GAME Credits",
@@ -454,7 +512,8 @@ export const Tokens:token[] = [
         "symbol": "GAME",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/IIUglm9.png?1"
+        "img": "https://i.imgur.com/IIUglm9.png?1",
+        "balance": undefined
         },
         {
         "name": "GemBites",
@@ -462,7 +521,8 @@ export const Tokens:token[] = [
         "symbol": "GBTS",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.ibb.co/D7nDtJK/Gem-Bites32x32.png"
+        "img": "https://i.ibb.co/D7nDtJK/Gem-Bites32x32.png",
+        "balance": undefined
         },
         {
         "name": "Gains V2",
@@ -470,7 +530,8 @@ export const Tokens:token[] = [
         "symbol": "GFARM2",
         "decimals": 18,
         "network": 137,
-        "img": "https://gains.farm/images/logo256.png"
+        "img": "https://gains.farm/images/logo256.png",
+        "balance": undefined
         },
         {
         "name": "Gravity Finance",
@@ -478,7 +539,8 @@ export const Tokens:token[] = [
         "symbol": "GFI",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/15871/small/GFI-Icon.png?1622178588"
+        "img": "https://assets.coingecko.com/coins/images/15871/small/GFI-Icon.png?1622178588",
+        "balance": undefined
         },
         {
         "name": "Aavegotchi GHST Token",
@@ -486,7 +548,8 @@ export const Tokens:token[] = [
         "symbol": "GHST",
         "decimals": 18,
         "network": 137,
-        "img": "https://aavegotchi.com/images/ghsttoken.svg"
+        "img": "https://aavegotchi.com/images/ghsttoken.svg",
+        "balance": undefined
         },
         {
         "name": "GAMEE",
@@ -494,7 +557,8 @@ export const Tokens:token[] = [
         "symbol": "GMEE",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14716/small/gmee-200x200.png?1621827468"
+        "img": "https://assets.coingecko.com/coins/images/14716/small/gmee-200x200.png?1621827468",
+        "balance": undefined
         },
         {
         "name": "Gnosis Token",
@@ -502,7 +566,8 @@ export const Tokens:token[] = [
         "symbol": "GNO",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6810e776880C02933D47DB1b9fc05908e5386b96/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6810e776880C02933D47DB1b9fc05908e5386b96/logo.png",
+        "balance": undefined
         },
         {
         "name": "Helmet.insure on Polygon",
@@ -510,7 +575,8 @@ export const Tokens:token[] = [
         "symbol": "Guard",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/VtDIzy7.png"
+        "img": "https://i.imgur.com/VtDIzy7.png",
+        "balance": undefined
         },
         {
         "name": "HEXX",
@@ -518,7 +584,8 @@ export const Tokens:token[] = [
         "symbol": "HEX",
         "decimals": 8,
         "network": 137,
-        "img": "https://hex.com/favicon.png"
+        "img": "https://hex.com/favicon.png",
+        "balance": undefined
         },
         {
         "name": "HONOR",
@@ -526,7 +593,8 @@ export const Tokens:token[] = [
         "symbol": "HONOR",
         "decimals": 18,
         "network": 137,
-        "img": "https://s2.coinmarketcap.com/static/img/coins/64x64/10620.png"
+        "img": "https://s2.coinmarketcap.com/static/img/coins/64x64/10620.png",
+        "balance": undefined
         },
         {
         "name": "Huobi Token",
@@ -534,7 +602,8 @@ export const Tokens:token[] = [
         "symbol": "HT",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/2822/small/huobi-token-logo.png?1547036992"
+        "img": "https://assets.coingecko.com/coins/images/2822/small/huobi-token-logo.png?1547036992",
+        "balance": undefined
         },
         {
         "name": "iFARM",
@@ -542,7 +611,8 @@ export const Tokens:token[] = [
         "symbol": "iFARM",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/harvestfi/assets/main/farm-logo.png"
+        "img": "https://raw.githubusercontent.com/harvestfi/assets/main/farm-logo.png",
+        "balance": undefined
         },
         {
         "name": "IG Gold",
@@ -550,7 +620,8 @@ export const Tokens:token[] = [
         "symbol": "IGG",
         "decimals": 6,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/7697/small/N7aEdYrY_400x400.png?1561587437"
+        "img": "https://assets.coingecko.com/coins/images/7697/small/N7aEdYrY_400x400.png?1561587437",
+        "balance": undefined
         },
         {
         "name": "Impermax",
@@ -558,7 +629,8 @@ export const Tokens:token[] = [
         "symbol": "IMX",
         "decimals": 18,
         "network": 137,
-        "img": "https://polygon.impermax.finance/build/assets/icons/0x60bb3d364b765c497c8ce50ae0ae3f0882c5bd05.png"
+        "img": "https://polygon.impermax.finance/build/assets/icons/0x60bb3d364b765c497c8ce50ae0ae3f0882c5bd05.png",
+        "balance": undefined
         },
         {
         "name": "IOI Token",
@@ -566,7 +638,8 @@ export const Tokens:token[] = [
         "symbol": "IOI",
         "decimals": 6,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/15952/small/IOI.jpg?1622514420"
+        "img": "https://assets.coingecko.com/coins/images/15952/small/IOI.jpg?1622514420",
+        "balance": undefined
         },
         {
         "name": "Everipedia IQ",
@@ -574,7 +647,8 @@ export const Tokens:token[] = [
         "symbol": "IQ",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/IQ.png"
+        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/IQ.png",
+        "balance": undefined
         },
         {
         "name": "IRISnet",
@@ -582,7 +656,8 @@ export const Tokens:token[] = [
         "symbol": "IRIS",
         "decimals": 6,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/5135/small/IRIS.png?1557999365"
+        "img": "https://assets.coingecko.com/coins/images/5135/small/IRIS.png?1557999365",
+        "balance": undefined
         },
         {
         "name": "Jarvis Reward Token",
@@ -590,7 +665,8 @@ export const Tokens:token[] = [
         "symbol": "JRT",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/b8086dbc7040582d1412effe7a951914d4a96eef/blockchains/ethereum/assets/0x8A9C67fee641579dEbA04928c4BC45F66e26343A/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/b8086dbc7040582d1412effe7a951914d4a96eef/blockchains/ethereum/assets/0x8A9C67fee641579dEbA04928c4BC45F66e26343A/logo.png",
+        "balance": undefined
         },
         {
         "name": "Forest Knight",
@@ -598,7 +674,8 @@ export const Tokens:token[] = [
         "symbol": "KNIGHT",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/18441/small/Coin_Forest_Knight_200x200.png?1632480031"
+        "img": "https://assets.coingecko.com/coins/images/18441/small/Coin_Forest_Knight_200x200.png?1632480031",
+        "balance": undefined
         },
         {
         "name": "kogecoin.io",
@@ -606,7 +683,8 @@ export const Tokens:token[] = [
         "symbol": "KOGECOIN",
         "decimals": 9,
         "network": 137,
-        "img": "https://kogefarm.io/koge-logo-01.png"
+        "img": "https://kogefarm.io/koge-logo-01.png",
+        "balance": undefined
         },
         {
         "name": "Kommunitas",
@@ -614,7 +692,8 @@ export const Tokens:token[] = [
         "symbol": "KOM",
         "decimals": 8,
         "network": 137,
-        "img": "https://i.imgur.com/KTS2F7I.png"
+        "img": "https://i.imgur.com/KTS2F7I.png",
+        "balance": undefined
         },
         {
         "name": "Krill",
@@ -622,7 +701,8 @@ export const Tokens:token[] = [
         "symbol": "Krill",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/REyP9yh.jpg"
+        "img": "https://i.imgur.com/REyP9yh.jpg",
+        "balance": undefined
         },
         {
         "name": "EthLend Token",
@@ -630,7 +710,8 @@ export const Tokens:token[] = [
         "symbol": "LEND",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x80fB784B7eD66730e8b1DBd9820aFD29931aab03/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x80fB784B7eD66730e8b1DBd9820aFD29931aab03/logo.png",
+        "balance": undefined
         },
         {
         "name": "ChainLink Token",
@@ -638,7 +719,8 @@ export const Tokens:token[] = [
         "symbol": "LINK",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png",
+        "balance": undefined
         },
         {
         "name": "Wrapped LUNA Token",
@@ -646,7 +728,8 @@ export const Tokens:token[] = [
         "symbol": "LUNA",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/8284/small/luna1557227471663.png?1567147072"
+        "img": "https://assets.coingecko.com/coins/images/8284/small/luna1557227471663.png?1567147072",
+        "balance": undefined
         },
         {
         "name": "Matic Aave interest bearing AAVE",
@@ -654,7 +737,8 @@ export const Tokens:token[] = [
         "symbol": "maAAVE",
         "decimals": 18,
         "network": 137,
-        "img": "https://aavegotchi.com/images/matokens/maAAVE.svg"
+        "img": "https://aavegotchi.com/images/matokens/maAAVE.svg",
+        "balance": undefined
         },
         {
         "name": "Matic Aave interest bearing DAI",
@@ -662,7 +746,8 @@ export const Tokens:token[] = [
         "symbol": "maDAI",
         "decimals": 18,
         "network": 137,
-        "img": "https://aavegotchi.com/images/matokens/maDAI.svg"
+        "img": "https://aavegotchi.com/images/matokens/maDAI.svg",
+        "balance": undefined
         },
         {
         "name": "MAI",
@@ -670,7 +755,8 @@ export const Tokens:token[] = [
         "symbol": "MAI",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/0xlaozi/qidao/main/images/mimatic-red.png"
+        "img": "https://raw.githubusercontent.com/0xlaozi/qidao/main/images/mimatic-red.png",
+        "balance": undefined
         },
         {
         "name": "Matic Aave interest bearing LINK",
@@ -678,7 +764,8 @@ export const Tokens:token[] = [
         "symbol": "maLINK",
         "decimals": 18,
         "network": 137,
-        "img": "https://aavegotchi.com/images/matokens/maLINK.svg"
+        "img": "https://aavegotchi.com/images/matokens/maLINK.svg",
+        "balance": undefined
         },
         {
         "name": "Decentraland MANA",
@@ -686,7 +773,8 @@ export const Tokens:token[] = [
         "symbol": "MANA",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x0F5D2fB29fb7d3CFeE444a200298f468908cC942/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x0F5D2fB29fb7d3CFeE444a200298f468908cC942/logo.png",
+        "balance": undefined
         },
         {
         "name": "Mask Network",
@@ -694,15 +782,17 @@ export const Tokens:token[] = [
         "symbol": "MASK",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14051/small/Mask_Network.jpg?1614050316"
+        "img": "https://assets.coingecko.com/coins/images/14051/small/Mask_Network.jpg?1614050316",
+        "balance": undefined
         },
         {   
         "name": "Matic",
-        "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+        "address": "0x0000000000000000000000000000000000001010",
         "symbol": "MATIC",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png",
+        "balance": undefined
         },
         {
         "name": "Matic Aave interest bearing TUSD",
@@ -710,7 +800,8 @@ export const Tokens:token[] = [
         "symbol": "maTUSD",
         "decimals": 18,
         "network": 137,
-        "img": "https://aavegotchi.com/images/matokens/maTUSD.svg"
+        "img": "https://aavegotchi.com/images/matokens/maTUSD.svg",
+        "balance": undefined
         },
         {
         "name": "Matic Aave interest bearing UNI",
@@ -718,7 +809,8 @@ export const Tokens:token[] = [
         "symbol": "maUNI",
         "decimals": 18,
         "network": 137,
-        "img": "https://aavegotchi.com/images/matokens/maUNI.svg"
+        "img": "https://aavegotchi.com/images/matokens/maUNI.svg",
+        "balance": undefined
         },
         {
         "name": "Matic Aave interest bearing USDC",
@@ -726,7 +818,8 @@ export const Tokens:token[] = [
         "symbol": "maUSDC",
         "decimals": 6,
         "network": 137,
-        "img": "https://aavegotchi.com/images/matokens/maUSDC.svg"
+        "img": "https://aavegotchi.com/images/matokens/maUSDC.svg",
+        "balance": undefined
         },
         {
         "name": "Matic Aave interest bearing USDT",
@@ -734,7 +827,8 @@ export const Tokens:token[] = [
         "symbol": "maUSDT",
         "decimals": 6,
         "network": 137,
-        "img": "https://aavegotchi.com/images/matokens/maUSDT.svg"
+        "img": "https://aavegotchi.com/images/matokens/maUSDT.svg",
+        "balance": undefined
         },
         {
         "name": "Matic Aave interest bearing WETH",
@@ -742,7 +836,8 @@ export const Tokens:token[] = [
         "symbol": "maWETH",
         "decimals": 18,
         "network": 137,
-        "img": "https://aavegotchi.com/images/matokens/maWETH.svg"
+        "img": "https://aavegotchi.com/images/matokens/maWETH.svg",
+        "balance": undefined
         },
         {
         "name": "Matic Aave interest bearing YFI",
@@ -750,7 +845,8 @@ export const Tokens:token[] = [
         "symbol": "maYFI",
         "decimals": 18,
         "network": 137,
-        "img": "https://aavegotchi.com/images/matokens/maYFI.svg"
+        "img": "https://aavegotchi.com/images/matokens/maYFI.svg",
+        "balance": undefined
         },
         {
         "name": "Bytom minted",
@@ -758,7 +854,8 @@ export const Tokens:token[] = [
         "symbol": "mBTM",
         "decimals": 8,
         "network": 137,
-        "img": "https://i.imgur.com/q0LZUrw.png"
+        "img": "https://i.imgur.com/q0LZUrw.png",
+        "balance": undefined
         },
         {
         "name": "Monsoon Finance",
@@ -766,7 +863,8 @@ export const Tokens:token[] = [
         "symbol": "MCASH",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/18632/small/DdcZZeP_%282%29.png?1632716316"
+        "img": "https://assets.coingecko.com/coins/images/18632/small/DdcZZeP_%282%29.png?1632716316",
+        "balance": undefined
         },
         {
         "name": "MeebMaster.com Token",
@@ -774,7 +872,8 @@ export const Tokens:token[] = [
         "symbol": "MEEB",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/tmPoZ1D.png"
+        "img": "https://i.imgur.com/tmPoZ1D.png",
+        "balance": undefined
         },
         {
         "name": "Memecoin",
@@ -782,7 +881,8 @@ export const Tokens:token[] = [
         "symbol": "MEM",
         "decimals": 18,
         "network": 137,
-        "img": "https://media.discordapp.net/attachments/846293892785242143/852874003928449054/mem_gold_with_white_5.png"
+        "img": "https://media.discordapp.net/attachments/846293892785242143/852874003928449054/mem_gold_with_white_5.png",
+        "balance": undefined
         },
         {
         "name": "Morpheus Infrastructure Token",
@@ -790,7 +890,8 @@ export const Tokens:token[] = [
         "symbol": "MITx",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/3164/small/mitx.png?1604888269"
+        "img": "https://assets.coingecko.com/coins/images/3164/small/mitx.png?1604888269",
+        "balance": undefined
         },
         {
         "name": "Ocean Token",
@@ -798,7 +899,8 @@ export const Tokens:token[] = [
         "symbol": "mOCEAN",
         "decimals": 18,
         "network": 137,
-        "img": "https://oceanprotocol.com/static/4ad704a150d436a1f32d495413fc47cd/favicon-white.png"
+        "img": "https://oceanprotocol.com/static/4ad704a150d436a1f32d495413fc47cd/favicon-white.png",
+        "balance": undefined
         },
         {
         "name": "MODEFI",
@@ -806,7 +908,8 @@ export const Tokens:token[] = [
         "symbol": "MOD",
         "decimals": 18,
         "network": 137,
-        "img": "https://modefi.io/images/modefi256.png"
+        "img": "https://modefi.io/images/modefi256.png",
+        "balance": undefined
         },
         {
         "name": "Monavale",
@@ -814,7 +917,8 @@ export const Tokens:token[] = [
         "symbol": "MONA",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/FR12tmm.jpg"
+        "img": "https://i.imgur.com/FR12tmm.jpg",
+        "balance": undefined
         },
         {
         "name": "Polywolf",
@@ -822,7 +926,8 @@ export const Tokens:token[] = [
         "symbol": "MOON",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.postimg.cc/CxvzF5bJ/moon-black.png"
+        "img": "https://i.postimg.cc/CxvzF5bJ/moon-black.png",
+        "balance": undefined
         },
         {
         "name": "MoonEdge",
@@ -830,7 +935,8 @@ export const Tokens:token[] = [
         "symbol": "MOONED",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/17393/small/ME_logo_200_200.png?1627526275"
+        "img": "https://assets.coingecko.com/coins/images/17393/small/ME_logo_200_200.png?1627526275",
+        "balance": undefined
         },
         {
         "name": "Mobius Token",
@@ -838,7 +944,8 @@ export const Tokens:token[] = [
         "symbol": "MOT",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/18144/small/11322.png?1630668459"
+        "img": "https://assets.coingecko.com/coins/images/18144/small/11322.png?1630668459",
+        "balance": undefined
         },
         {
         "name": "Matic Rebalance Token",
@@ -846,7 +953,8 @@ export const Tokens:token[] = [
         "symbol": "mRBAL",
         "decimals": 18,
         "network": 137,
-        "img": "https://rebalancetoken.io/images/logo/logo.png"
+        "img": "https://rebalancetoken.io/images/logo/logo.png",
+        "balance": undefined
         },
         {
         "name": "MaticVerse",
@@ -854,7 +962,8 @@ export const Tokens:token[] = [
         "symbol": "Mverse",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/18403/small/A0782-F05-535-C-45-C8-BE4-F-FEBB4-B8-B5933.jpg?1631792934"
+        "img": "https://assets.coingecko.com/coins/images/18403/small/A0782-F05-535-C-45-C8-BE4-F-FEBB4-B8-B5933.jpg?1631792934",
+        "balance": undefined
         },
         {
         "name": "Nexo",
@@ -862,7 +971,8 @@ export const Tokens:token[] = [
         "symbol": "NEXO",
         "decimals": 18,
         "network": 137,
-        "img": "https://s2.coinmarketcap.com/static/img/coins/200x200/2694.png"
+        "img": "https://s2.coinmarketcap.com/static/img/coins/200x200/2694.png",
+        "balance": undefined
         },
         {
         "name": "NASDEX Token",
@@ -870,7 +980,8 @@ export const Tokens:token[] = [
         "symbol": "NSDX",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/18634/small/nadex.PNG?1632727863"
+        "img": "https://assets.coingecko.com/coins/images/18634/small/nadex.PNG?1632727863",
+        "balance": undefined
         },
         {
         "name": "O3 Swap Token",
@@ -878,7 +989,8 @@ export const Tokens:token[] = [
         "symbol": "O3",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/15460/small/o3.png?1620904316"
+        "img": "https://assets.coingecko.com/coins/images/15460/small/o3.png?1620904316",
+        "balance": undefined
         },
         {
         "name": "OddzToken",
@@ -886,7 +998,8 @@ export const Tokens:token[] = [
         "symbol": "ODDZ",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14421/small/img_circle_200x200.png?1617345151"
+        "img": "https://assets.coingecko.com/coins/images/14421/small/img_circle_200x200.png?1617345151",
+        "balance": undefined
         },
         {
         "name": "OM",
@@ -894,7 +1007,8 @@ export const Tokens:token[] = [
         "symbol": "OM",
         "decimals": 18,
         "network": 137,
-        "img": "https://etherscan.io/token/images/mantradao_32.png"
+        "img": "https://etherscan.io/token/images/mantradao_32.png",
+        "balance": undefined
         },
         {
         "name": "Augury Finance",
@@ -902,7 +1016,8 @@ export const Tokens:token[] = [
         "symbol": "OMEN",
         "decimals": 18,
         "network": 137,
-        "img": "https://augury.finance/_nuxt/img/omen.b433161.png"
+        "img": "https://augury.finance/_nuxt/img/omen.b433161.png",
+        "balance": undefined
         },
         {
         "name": "OpenOcean",
@@ -910,7 +1025,8 @@ export const Tokens:token[] = [
         "symbol": "OOE",
         "decimals": 18,
         "network": 137,
-        "img": "https://cloudstorage.openocean.finance/image/ooe_log.png"
+        "img": "https://cloudstorage.openocean.finance/image/ooe_log.png",
+        "balance": undefined
         },
         {
         "name": "Orbs",
@@ -918,7 +1034,8 @@ export const Tokens:token[] = [
         "symbol": "ORBS",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/4630/small/Orbs.jpg?1547039896"
+        "img": "https://assets.coingecko.com/coins/images/4630/small/Orbs.jpg?1547039896",
+        "balance": undefined
         },
         {
         "name": "Orbit Bridge Polygon AUTOv2",
@@ -926,7 +1043,8 @@ export const Tokens:token[] = [
         "symbol": "PAUTO",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/13751/small/autofarm_icon_200x200.png?1611494288"
+        "img": "https://assets.coingecko.com/coins/images/13751/small/autofarm_icon_200x200.png?1611494288",
+        "balance": undefined
         },
         {
         "name": "Orbit Bridge Polygon Binance Coin",
@@ -934,7 +1052,8 @@ export const Tokens:token[] = [
         "symbol": "PBNB",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png?1547034615"
+        "img": "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png?1547034615",
+        "balance": undefined
         },
         {
         "name": "PolkaBridge",
@@ -942,7 +1061,8 @@ export const Tokens:token[] = [
         "symbol": "PBR",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/13744/small/symbol-whitebg200x200.png?1611377553"
+        "img": "https://assets.coingecko.com/coins/images/13744/small/symbol-whitebg200x200.png?1611377553",
+        "balance": undefined
         },
         {
         "name": "PERA",
@@ -950,7 +1070,8 @@ export const Tokens:token[] = [
         "symbol": "PERA",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/16185/small/Pera.jpg?1623238387"
+        "img": "https://assets.coingecko.com/coins/images/16185/small/Pera.jpg?1623238387",
+        "balance": undefined
         },
         {
         "name": "Phoenix Token",
@@ -958,7 +1079,8 @@ export const Tokens:token[] = [
         "symbol": "PHX",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/17675/small/phx_logo.png?1628832432"
+        "img": "https://assets.coingecko.com/coins/images/17675/small/phx_logo.png?1628832432",
+        "balance": undefined
         },
         {
         "name": "PLOT",
@@ -966,7 +1088,8 @@ export const Tokens:token[] = [
         "symbol": "PLOT",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/nQDG9AQ.png"
+        "img": "https://i.imgur.com/nQDG9AQ.png",
+        "balance": undefined
         },
         {
         "name": "PILLAR",
@@ -974,7 +1097,8 @@ export const Tokens:token[] = [
         "symbol": "PLR",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/809/small/v2logo-1.png?1624906282"
+        "img": "https://assets.coingecko.com/coins/images/809/small/v2logo-1.png?1624906282",
+        "balance": undefined
         },
         {
         "name": "Polygon BUNNY Token",
@@ -982,7 +1106,8 @@ export const Tokens:token[] = [
         "symbol": "polyBUNNY",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/PancakeBunny-finance/PolygonBUNNY/main/assets/token-bunny_32x32.png"
+        "img": "https://raw.githubusercontent.com/PancakeBunny-finance/PolygonBUNNY/main/assets/token-bunny_32x32.png",
+        "balance": undefined
         },
         {
         "name": "PolyDoge",
@@ -990,7 +1115,8 @@ export const Tokens:token[] = [
         "symbol": "PolyDoge",
         "decimals": 18,
         "network": 137,
-        "img": "https://polydoge.com/doge-webpage_files/doge.png"
+        "img": "https://polydoge.com/doge-webpage_files/doge.png",
+        "balance": undefined
         },
         {
         "name": "PoolTogether",
@@ -998,7 +1124,8 @@ export const Tokens:token[] = [
         "symbol": "POOL",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14003/small/PoolTogether.png?1613585632"
+        "img": "https://assets.coingecko.com/coins/images/14003/small/PoolTogether.png?1613585632",
+        "balance": undefined
         },
         {
         "name": "pSwampy",
@@ -1006,7 +1133,8 @@ export const Tokens:token[] = [
         "symbol": "pSwamp",
         "decimals": 18,
         "network": 137,
-        "img": "https://swamp.finance/static/frontend/img/symbols/pswamp.svg"
+        "img": "https://swamp.finance/static/frontend/img/symbols/pswamp.svg",
+        "balance": undefined
         },
         {
         "name": "PUSD",
@@ -1014,7 +1142,8 @@ export const Tokens:token[] = [
         "symbol": "PUSD",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/16762/small/PUSD-purple-200.png?1624937879"
+        "img": "https://assets.coingecko.com/coins/images/16762/small/PUSD-purple-200.png?1624937879",
+        "balance": undefined
         },
         {
         "name": "PYR Token",
@@ -1022,7 +1151,8 @@ export const Tokens:token[] = [
         "symbol": "PYR",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14770/small/1617088937196.png?1619414736"
+        "img": "https://assets.coingecko.com/coins/images/14770/small/1617088937196.png?1619414736",
+        "balance": undefined
         },
         {
         "name": "Qi Dao",
@@ -1030,7 +1160,8 @@ export const Tokens:token[] = [
         "symbol": "QI",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/0xlaozi/qidao/main/images/qi.png"
+        "img": "https://raw.githubusercontent.com/0xlaozi/qidao/main/images/qi.png",
+        "balance": undefined
         },
         {
         "name": "Quickswap",
@@ -1038,7 +1169,8 @@ export const Tokens:token[] = [
         "symbol": "QUICK",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-interface/master/public/favicon.jpeg"
+        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-interface/master/public/favicon.jpeg",
+        "balance": undefined
         },
         {
         "name": "QuickChart",
@@ -1046,7 +1178,8 @@ export const Tokens:token[] = [
         "symbol": "QuickChart",
         "decimals": 9,
         "network": 137,
-        "img": "https://i.imgur.com/jv5A0eX.png"
+        "img": "https://i.imgur.com/jv5A0eX.png",
+        "balance": undefined
         },
         {
         "name": "RAMP",
@@ -1054,7 +1187,8 @@ export const Tokens:token[] = [
         "symbol": "RAMP",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/12837/small/RAMP-Logo-v2-1000pxsq.png?1617952606"
+        "img": "https://assets.coingecko.com/coins/images/12837/small/RAMP-Logo-v2-1000pxsq.png?1617952606",
+        "balance": undefined
         },
         {
         "name": "Regen Network",
@@ -1062,7 +1196,8 @@ export const Tokens:token[] = [
         "symbol": "REGEN",
         "decimals": 6,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/16733/small/REGEN.png?1624861317"
+        "img": "https://assets.coingecko.com/coins/images/16733/small/REGEN.png?1624861317",
+        "balance": undefined
         },
         {
         "name": "Zerogoki Token",
@@ -1070,7 +1205,8 @@ export const Tokens:token[] = [
         "symbol": "REI",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/17015/small/iconZerogoki.png?1626618921"
+        "img": "https://assets.coingecko.com/coins/images/17015/small/iconZerogoki.png?1626618921",
+        "balance": undefined
         },
         {
         "name": "Relay Token",
@@ -1078,7 +1214,8 @@ export const Tokens:token[] = [
         "symbol": "RELAY",
         "decimals": 18,
         "network": 137,
-        "img": "https://starter.xyz/Relay.png"
+        "img": "https://starter.xyz/Relay.png",
+        "balance": undefined
         },
         {
         "name": "renBTC",
@@ -1086,7 +1223,8 @@ export const Tokens:token[] = [
         "symbol": "renBTC",
         "decimals": 8,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/11370/small/Bitcoin.jpg?1628072791"
+        "img": "https://assets.coingecko.com/coins/images/11370/small/Bitcoin.jpg?1628072791",
+        "balance": undefined
         },
         {
         "name": "renDGB",
@@ -1094,7 +1232,8 @@ export const Tokens:token[] = [
         "symbol": "renDGB",
         "decimals": 8,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/renDGB.svg"
+        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/renDGB.svg",
+        "balance": undefined
         },
         {
         "name": "renDOGE",
@@ -1102,7 +1241,8 @@ export const Tokens:token[] = [
         "symbol": "renDOGE",
         "decimals": 8,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/13796/small/renDOGE.png?1611897869"
+        "img": "https://assets.coingecko.com/coins/images/13796/small/renDOGE.png?1611897869",
+        "balance": undefined
         },
         {
         "name": "REVV",
@@ -1110,7 +1250,8 @@ export const Tokens:token[] = [
         "symbol": "REVV",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/12373/small/REVV_TOKEN_Refined_2021_%281%29.png?1627652390"
+        "img": "https://assets.coingecko.com/coins/images/12373/small/REVV_TOKEN_Refined_2021_%281%29.png?1627652390",
+        "balance": undefined
         },
         {
         "name": "Darwinia",
@@ -1118,7 +1259,8 @@ export const Tokens:token[] = [
         "symbol": "Ring",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/9443/small/RING.png?1615271827"
+        "img": "https://assets.coingecko.com/coins/images/9443/small/RING.png?1615271827",
+        "balance": undefined
         },
         {
         "name": "rUSD",
@@ -1126,7 +1268,8 @@ export const Tokens:token[] = [
         "symbol": "rUSD",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/16184/small/rUSD-Logo-200.png?1623231145"
+        "img": "https://assets.coingecko.com/coins/images/16184/small/rUSD-Logo-200.png?1623231145",
+        "balance": undefined
         },
         {
         "name": "polySAFU",
@@ -1134,7 +1277,8 @@ export const Tokens:token[] = [
         "symbol": "SAFU",
         "decimals": 9,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/16074/small/polysafu.PNG?1622770619"
+        "img": "https://assets.coingecko.com/coins/images/16074/small/polysafu.PNG?1622770619",
+        "balance": undefined
         },
         {
         "name": "PolyShield",
@@ -1142,7 +1286,8 @@ export const Tokens:token[] = [
         "symbol": "SHI3LD",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/17641/small/QRE5xI0.png?1628741510"
+        "img": "https://assets.coingecko.com/coins/images/17641/small/QRE5xI0.png?1628741510",
+        "balance": undefined
         },
         {
         "name": "Snook",
@@ -1150,7 +1295,8 @@ export const Tokens:token[] = [
         "symbol": "SNK",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/18197/small/snk.png?1630979321"
+        "img": "https://assets.coingecko.com/coins/images/18197/small/snk.png?1630979321",
+        "balance": undefined
         },
         {
         "name": "SOL",
@@ -1158,7 +1304,8 @@ export const Tokens:token[] = [
         "symbol": "SOL",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/4128/small/coinmarketcap-solana-200.png?1616489452"
+        "img": "https://assets.coingecko.com/coins/images/4128/small/coinmarketcap-solana-200.png?1616489452",
+        "balance": undefined
         },
         {
         "name": "BSCstarter",
@@ -1166,7 +1313,8 @@ export const Tokens:token[] = [
         "symbol": "START",
         "decimals": 18,
         "network": 137,
-        "img": "https://starter.xyz/logo_poly_sym.png"
+        "img": "https://starter.xyz/logo_poly_sym.png",
+        "balance": undefined
         },
         {
         "name": "SuperFarm",
@@ -1174,7 +1322,8 @@ export const Tokens:token[] = [
         "symbol": "SUPER",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14040/small/6YPdWn6.png?1613975899"
+        "img": "https://assets.coingecko.com/coins/images/14040/small/6YPdWn6.png?1613975899",
+        "balance": undefined
         },
         {
         "name": "TrustSwap Token",
@@ -1182,7 +1331,8 @@ export const Tokens:token[] = [
         "symbol": "SWAP",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/vZnU36G.png"
+        "img": "https://i.imgur.com/vZnU36G.png",
+        "balance": undefined
         },
         {
         "name": "SportX",
@@ -1190,7 +1340,8 @@ export const Tokens:token[] = [
         "symbol": "SX",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/sx.jpg"
+        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/sx.jpg",
+        "balance": undefined
         },
         {
         "name": "The Crypto Prophecies",
@@ -1198,7 +1349,8 @@ export const Tokens:token[] = [
         "symbol": "TCP",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/15054/small/tcp.PNG?1619579195"
+        "img": "https://assets.coingecko.com/coins/images/15054/small/tcp.PNG?1619579195",
+        "balance": undefined
         },
         {
         "name": "Cryptomeda",
@@ -1206,7 +1358,8 @@ export const Tokens:token[] = [
         "symbol": "TECH",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/17983/small/Profile_picture_white.jpg?1630149169"
+        "img": "https://assets.coingecko.com/coins/images/17983/small/Profile_picture_white.jpg?1630149169",
+        "balance": undefined
         },
         {
         "name": "Telcoin",
@@ -1214,7 +1367,8 @@ export const Tokens:token[] = [
         "symbol": "TEL",
         "decimals": 2,
         "network": 137,
-        "img": "https://etherscan.io/token/images/telcoin_28.png"
+        "img": "https://etherscan.io/token/images/telcoin_28.png",
+        "balance": undefined
         },
         {
         "name": "Polytrade",
@@ -1222,7 +1376,8 @@ export const Tokens:token[] = [
         "symbol": "TRADE",
         "decimals": 18,
         "network": 137,
-        "img": "https://polygonscan.com/token/images/polytrade_32.png"
+        "img": "https://polygonscan.com/token/images/polytrade_32.png",
+        "balance": undefined
         },
         {
         "name": "Unibright",
@@ -1230,7 +1385,8 @@ export const Tokens:token[] = [
         "symbol": "UBT",
         "decimals": 8,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/2707/small/UnibrightLogo_colorful_500x500_preview.png?1547036916"
+        "img": "https://assets.coingecko.com/coins/images/2707/small/UnibrightLogo_colorful_500x500_preview.png?1547036916",
+        "balance": undefined
         },
         {
         "name": "UnirisToken",
@@ -1238,7 +1394,8 @@ export const Tokens:token[] = [
         "symbol": "UCO",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/12330/small/e353ZVj.png?1599112996"
+        "img": "https://assets.coingecko.com/coins/images/12330/small/e353ZVj.png?1599112996",
+        "balance": undefined
         },
         {
         "name": "UniLend Finance Token",
@@ -1246,7 +1403,8 @@ export const Tokens:token[] = [
         "symbol": "UFT",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/12819/small/UniLend_Finance_logo_PNG.png?1602748658"
+        "img": "https://assets.coingecko.com/coins/images/12819/small/UniLend_Finance_logo_PNG.png?1602748658",
+        "balance": undefined
         },
         {
         "name": "Unreal Governance Token",
@@ -1254,7 +1412,8 @@ export const Tokens:token[] = [
         "symbol": "UGT",
         "decimals": 18,
         "network": 137,
-        "img": "https://s2.coinmarketcap.com/static/img/coins/200x200/11292.png"
+        "img": "https://s2.coinmarketcap.com/static/img/coins/200x200/11292.png",
+        "balance": undefined
         },
         {
         "name": "Uniswap",
@@ -1262,7 +1421,8 @@ export const Tokens:token[] = [
         "symbol": "UNI",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-interface/master/public/favicon1.png"
+        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-interface/master/public/favicon1.png",
+        "balance": undefined
         },
         {
         "name": "USD Coin",
@@ -1270,7 +1430,8 @@ export const Tokens:token[] = [
         "symbol": "USDC",
         "decimals": 6,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+        "balance": undefined
         },
         {
         "name": "Tether USD",
@@ -1278,7 +1439,8 @@ export const Tokens:token[] = [
         "symbol": "USDT",
         "decimals": 6,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+        "balance": undefined
         },
         {
         "name": "Wrapped UST Token",
@@ -1286,7 +1448,8 @@ export const Tokens:token[] = [
         "symbol": "UST",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/12681/small/UST.png?1601612407"
+        "img": "https://assets.coingecko.com/coins/images/12681/small/UST.png?1601612407",
+        "balance": undefined
         },
         {
         "name": "Vision Token",
@@ -1294,7 +1457,8 @@ export const Tokens:token[] = [
         "symbol": "VISION",
         "decimals": 18,
         "network": 137,
-        "img": "https://s3-us-west-2.amazonaws.com/acf-uploads/apyvisionlogo200circle.png"
+        "img": "https://s3-us-west-2.amazonaws.com/acf-uploads/apyvisionlogo200circle.png",
+        "balance": undefined
         },
         {
         "name": "yieldwatch",
@@ -1302,7 +1466,8 @@ export const Tokens:token[] = [
         "symbol": "WATCH",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14186/small/WATCH1.png?1614825718"
+        "img": "https://assets.coingecko.com/coins/images/14186/small/WATCH1.png?1614825718",
+        "balance": undefined
         },
         {
         "name": "Wrapped BTC",
@@ -1310,7 +1475,8 @@ export const Tokens:token[] = [
         "symbol": "WBTC",
         "decimals": 8,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png",
+        "balance": undefined
         },
         {
         "name": "Wrapped BUSD",
@@ -1318,7 +1484,8 @@ export const Tokens:token[] = [
         "symbol": "WBUSD",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/9576/small/BUSD.png?1568947766"
+        "img": "https://assets.coingecko.com/coins/images/9576/small/BUSD.png?1568947766",
+        "balance": undefined
         },
         {
         "name": "Wise Token",
@@ -1326,7 +1493,8 @@ export const Tokens:token[] = [
         "symbol": "WISE",
         "decimals": 18,
         "network": 137,
-        "img": "https://etherscan.io/token/images/wisetoken_32.png"
+        "img": "https://etherscan.io/token/images/wisetoken_32.png",
+        "balance": undefined
         },
         {
         "name": "Wrapped Matic",
@@ -1334,7 +1502,8 @@ export const Tokens:token[] = [
         "symbol": "WMATIC",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png",
+        "balance": undefined
         },
         {
         "name": "moonwolf.io",
@@ -1342,7 +1511,8 @@ export const Tokens:token[] = [
         "symbol": "WOLF",
         "decimals": 9,
         "network": 137,
-        "img": "https://i.postimg.cc/PfLb0ssB/wolf-black.png"
+        "img": "https://i.postimg.cc/PfLb0ssB/wolf-black.png",
+        "balance": undefined
         },
         {
         "name": "Wootrade Network",
@@ -1350,7 +1520,8 @@ export const Tokens:token[] = [
         "symbol": "WOO",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/wootrade_w.svg"
+        "img": "https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/wootrade_w.svg",
+        "balance": undefined
         },
         {
         "name": "WOWswap",
@@ -1358,7 +1529,8 @@ export const Tokens:token[] = [
         "symbol": "WOW",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14101/small/Group-423.png?1614317472"
+        "img": "https://assets.coingecko.com/coins/images/14101/small/Group-423.png?1614317472",
+        "balance": undefined
         },
         {
         "name": "WazirX",
@@ -1366,7 +1538,8 @@ export const Tokens:token[] = [
         "symbol": "WRX",
         "decimals": 8,
         "network": 137,
-        "img": "https://etherscan.io/token/images/binance-wrx_32.png"
+        "img": "https://etherscan.io/token/images/binance-wrx_32.png",
+        "balance": undefined
         },
         {
         "name": "XCAD Token",
@@ -1374,7 +1547,8 @@ export const Tokens:token[] = [
         "symbol": "XCAD",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/jykuRwK.png"
+        "img": "https://i.imgur.com/jykuRwK.png",
+        "balance": undefined
         },
         {
         "name": "X-Cash",
@@ -1382,7 +1556,8 @@ export const Tokens:token[] = [
         "symbol": "XCash",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/6331/small/5fbb9e5b8f27d74dd8bcb912_xcash_coingecko_logo.png?1606133752"
+        "img": "https://assets.coingecko.com/coins/images/6331/small/5fbb9e5b8f27d74dd8bcb912_xcash_coingecko_logo.png?1606133752",
+        "balance": undefined
         },
         {
         "name": "Exeedme",
@@ -1390,7 +1565,8 @@ export const Tokens:token[] = [
         "symbol": "XED",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/Kte7hVj.jpg"
+        "img": "https://i.imgur.com/Kte7hVj.jpg",
+        "balance": undefined
         },
         {
         "name": "Standard",
@@ -1398,7 +1574,8 @@ export const Tokens:token[] = [
         "symbol": "xMARK",
         "decimals": 9,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/8cb78aca77b340510958ed98a3cd260d2d7f0420/blockchains/ethereum/assets/0x36b679bd64Ed73DBfd88909cDCB892cB66Bd4CBb/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/8cb78aca77b340510958ed98a3cd260d2d7f0420/blockchains/ethereum/assets/0x36b679bd64Ed73DBfd88909cDCB892cB66Bd4CBb/logo.png",
+        "balance": undefined
         },
         {
         "name": "Persistence",
@@ -1406,7 +1583,8 @@ export const Tokens:token[] = [
         "symbol": "XPRT",
         "decimals": 6,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/14582/small/512_Light.png?1617149658"
+        "img": "https://assets.coingecko.com/coins/images/14582/small/512_Light.png?1617149658",
+        "balance": undefined
         },
         {
         "name": "YAMP.FINANCE",
@@ -1414,7 +1592,8 @@ export const Tokens:token[] = [
         "symbol": "YAMP",
         "decimals": 18,
         "network": 137,
-        "img": "https://yamp.finance/img/yamp_logo.svg"
+        "img": "https://yamp.finance/img/yamp_logo.svg",
+        "balance": undefined
         },
         {
         "name": "YAYO Coin",
@@ -1422,7 +1601,8 @@ export const Tokens:token[] = [
         "symbol": "YAYO",
         "decimals": 4,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/YayoCorp/yayo-assets/master/avatar.png"
+        "img": "https://raw.githubusercontent.com/YayoCorp/yayo-assets/master/avatar.png",
+        "balance": undefined
         },
         {
         "name": "YEL Token",
@@ -1430,7 +1610,8 @@ export const Tokens:token[] = [
         "symbol": "YEL",
         "decimals": 18,
         "network": 137,
-        "img": "https://i.imgur.com/cwfndaf.png"
+        "img": "https://i.imgur.com/cwfndaf.png",
+        "balance": undefined
         },
         {
         "name": "YfDAI.finance",
@@ -1438,7 +1619,8 @@ export const Tokens:token[] = [
         "symbol": "Yf-DAI",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/12385/small/1619048513068.png?1622193581"
+        "img": "https://assets.coingecko.com/coins/images/12385/small/1619048513068.png?1622193581",
+        "balance": undefined
         },
         {
         "name": "yearn.finance",
@@ -1446,7 +1628,8 @@ export const Tokens:token[] = [
         "symbol": "YFI",
         "decimals": 18,
         "network": 137,
-        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e/logo.png"
+        "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e/logo.png",
+        "balance": undefined
         },
         {
         "name": "ZeroSwapToken",
@@ -1454,7 +1637,8 @@ export const Tokens:token[] = [
         "symbol": "ZEE",
         "decimals": 18,
         "network": 137,
-        "img": "https://pbs.twimg.com/profile_images/1366339230683652096/sit30Uuo_400x400.png"
+        "img": "https://pbs.twimg.com/profile_images/1366339230683652096/sit30Uuo_400x400.png",
+        "balance": undefined
         },
         {
         "name": "Zerogoki USD",
@@ -1462,6 +1646,7 @@ export const Tokens:token[] = [
         "symbol": "zUSD",
         "decimals": 18,
         "network": 137,
-        "img": "https://assets.coingecko.com/coins/images/17028/small/iconUSD.png?1626619046"
+        "img": "https://assets.coingecko.com/coins/images/17028/small/iconUSD.png?1626619046",
+        "balance": undefined
         }
 ]

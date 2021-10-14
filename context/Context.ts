@@ -1,5 +1,6 @@
 import { createContext, Dispatch, SetStateAction } from "react";
 import { Tokens } from './../tokens/Tokens';
+import { BigNumber } from 'ethers';
 
 interface token{
     name: string
@@ -8,6 +9,7 @@ interface token{
     decimals:Number
     network:Number
     img:string
+    balance: BigNumber | undefined
 }
 
 

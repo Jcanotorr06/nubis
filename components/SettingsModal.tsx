@@ -1,5 +1,5 @@
 import { WarningTwoIcon } from "@chakra-ui/icons"
-import { Modal, ModalContent, ModalHeader, ModalBody, Input, NumberInput, Text, Button, NumberInputField, Switch, HStack, Box, InputRightElement, InputGroup, useColorModeValue, ModalCloseButton, ModalOverlay } from "@chakra-ui/react" 
+import { Modal, ModalContent, ModalHeader, ModalBody, NumberInput, Text, Button, NumberInputField, HStack, Box, InputRightElement, InputGroup, useColorModeValue, ModalCloseButton, ModalOverlay } from "@chakra-ui/react" 
 import { useContext, MouseEvent, ChangeEvent } from "react"
 import { settingsContext } from "../context/Context"
 

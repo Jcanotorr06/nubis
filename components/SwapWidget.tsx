@@ -12,12 +12,17 @@ interface Props{
     onSettingsOpen: () => void
 }
 
+interface swap{
+    from: number | null
+    to: number | null
+}
 
 const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
     const {activateBrowserWallet, account, chainId} = useEthers()
     const tokens = useContext(tokenContext)
     const {activeTokens, setActiveTokens} = useContext(activeTokenContext)
     const {settings:{slippage}} = useContext(settingsContext)
+    const [swap, setSwap] = useState<swap>({from: null, to: null})
 
     const handleConnectWallet = () => {
         activateBrowserWallet()
@@ -36,6 +41,10 @@ const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
     const swapHeight = useBreakpointValue({base: '100%',xl: '70%', lg: '75%', md:'85%'})
     const tokenWidth = useBreakpointValue({base: '15px', xl: '25px', lg:'25px', md:'20px'})
 
+    useEffect(() => {
+
+    }, [])
+
     return activeTokens[0] ?(
         <Flex w="100%" justifyContent="center" alignItems="center" h="100%">
 
@@ -51,9 +60,14 @@ const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
                 </Flex>
                 <VStack direction="column" justifyContent="space-between" alignItems="center" spacing="1rem" h="100%" paddingY="1rem">
                     <Box w="100%">
-                        <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
-                            From
-                        </Text>
+                        <HStack justifyContent="space-between" alignItems="center" w="full">
+                            <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
+                                From
+                            </Text>
+                            <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
+                                Balance: {activeTokens[0].balance? (parseFloat(activeTokens[0].balance.toString())/1000000000000000000).toFixed(activeTokens[0].decimals) : 'Cannot get balance'}
+                            </Text>
+                        </HStack>
                         <HStack bg={bgDark} spacing="1rem" minWidth="full" justifyContent="space-between"  border="1px solid" borderColor="gray.500" borderRadius="xl" p="0.5rem" alignItems="center" >
                             <NumberInput placeholder="0.0" w="80%" borderRight="1px solid">
                                 <NumberInputField border="none" fontSize="2xl" placeholder="0.00" _placeholder={{color: '#888'}} _focus={{outline: 'none'}} />
@@ -77,9 +91,14 @@ const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
                     </Button>
 
                     <Box w="100%">
-                        <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
-                            To
-                        </Text>
+                        <HStack justifyContent="space-between" alignItems="center" w="full">
+                            <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
+                                To
+                            </Text>
+                            <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
+                                Balance: {activeTokens[1].balance? (parseFloat(activeTokens[1].balance.toString())/1000000000000000000).toFixed(activeTokens[1].decimals) : 'Cannot get balance'}
+                            </Text>
+                        </HStack>
                         <HStack bg={bgDark} spacing="1rem" minWidth="full" justifyContent="space-between"  border="1px solid" borderColor="gray.500" borderRadius="xl" p="0.5rem" alignItems="center">
                             <NumberInput placeholder="0.0" w="80%" borderRight="1px solid">
                                 <NumberInputField border="none" fontSize="2xl" placeholder="0.00" _placeholder={{color: '#888'}} _focus={{outline: 'none'}} />
@@ -105,15 +124,18 @@ const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
                         </Text>
                     </HStack>
                 </VStack>
-                {chainId === ChainId.Polygon ?
-                    <Button size="lg" bg={bgBtn} fontWeight="bold" borderRadius="2xl" borderX="4px solid" borderTop="2px solid" borderBottom="8px solid" borderColor="#7f84fe" color="#7f84fe" py="2rem" onClick={handleConnectWallet} w="100%" >
-                        {account ?
-                        'Swap'
-                        :'Connect Wallet'
-                        }
+                {account ? 
+                    chainId === ChainId.Polygon ?
+                    <Button size="lg" bg={bgBtn} fontWeight="bold" borderRadius="2xl" borderX="4px solid" borderTop="2px solid" borderBottom="8px solid" borderColor="#7f84fe" color="#7f84fe" py="2rem" w="100%" >
+                        Swap
                     </Button>
-                :   <Button size="lg" colorScheme="red" fontWeight="bold" borderRadius="2xl" borderX="4px solid" borderTop="2px solid" borderBottom="8px solid" py="2rem" w="100%" >
+                    :
+                    <Button size="lg" colorScheme="red" fontWeight="bold" borderRadius="2xl" borderX="4px solid" borderTop="2px solid" borderBottom="8px solid" py="2rem" w="100%" >
                         Wrong Network
+                    </Button>
+                :   
+                    <Button size="lg" bg={bgBtn} fontWeight="bold" borderRadius="2xl" borderX="4px solid" borderTop="2px solid" borderBottom="8px solid" borderColor="#7f84fe" color="#7f84fe" py="2rem" onClick={handleConnectWallet} w="100%" >
+                        Connect Wallet
                     </Button>
                 }
             </Flex>
