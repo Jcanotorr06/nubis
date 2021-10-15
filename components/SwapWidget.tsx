@@ -65,7 +65,7 @@ const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
                                 From
                             </Text>
                             <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
-                                Balance: {activeTokens[0].balance? (parseFloat(activeTokens[0].balance.toString())/1000000000000000000).toFixed(activeTokens[0].decimals) : 'Cannot get balance'}
+                                Balance: {activeTokens[0].balance? (parseFloat(activeTokens[0].balance.toString())/1E18).toFixed(activeTokens[0].decimals) : 'Cannot get balance'}
                             </Text>
                         </HStack>
                         <HStack bg={bgDark} spacing="1rem" minWidth="full" justifyContent="space-between"  border="1px solid" borderColor="gray.500" borderRadius="xl" p="0.5rem" alignItems="center" >
@@ -96,7 +96,7 @@ const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
                                 To
                             </Text>
                             <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
-                                Balance: {activeTokens[1].balance? (parseFloat(activeTokens[1].balance.toString())/1000000000000000000).toFixed(activeTokens[1].decimals) : 'Cannot get balance'}
+                                Balance: {activeTokens[1].balance? (parseFloat(activeTokens[1].balance.toString())/1E18).toFixed(activeTokens[1].decimals) : 'Cannot get balance'}
                             </Text>
                         </HStack>
                         <HStack bg={bgDark} spacing="1rem" minWidth="full" justifyContent="space-between"  border="1px solid" borderColor="gray.500" borderRadius="xl" p="0.5rem" alignItems="center">
