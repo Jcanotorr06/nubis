@@ -18,8 +18,8 @@ interface token{
     name: string
     address:string
     symbol:string
-    decimals:Number
-    network:Number
+    decimals:number
+    network:number
     img:string,
     balance: BigNumber | undefined
 }
