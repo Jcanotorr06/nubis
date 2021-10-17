@@ -1,10 +1,11 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { Box, Button, Flex, Text, IconButton, Icon, Image, HStack, NumberInput, NumberInputField, VStack, useColorModeValue, useDisclosure, useBreakpointValue } from '@chakra-ui/react'
 import { useEthers, ChainId } from '@usedapp/core'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext, MouseEvent, ChangeEvent } from 'react'
 import Head from 'next/head'
 import { activeTokenContext, settingsContext, tokenContext } from '../context/Context'
 import {MdTune} from 'react-icons/md'
+import { BigNumber } from 'ethers'
 
 interface Props{
     onFirstOpen: () => void
@@ -22,7 +23,8 @@ const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
     const tokens = useContext(tokenContext)
     const {activeTokens, setActiveTokens} = useContext(activeTokenContext)
     const {settings:{slippage}} = useContext(settingsContext)
-    const [swap, setSwap] = useState<swap>({from: null, to: null})
+    const [from, setFrom] = useState<string>()
+    const [to, setTo] = useState<string>()
 
     const handleConnectWallet = () => {
         activateBrowserWallet()
@@ -33,6 +35,30 @@ const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
             setActiveTokens(activeTokens.slice().reverse())
         )
     }
+
+    const handleMax = (e:MouseEvent<HTMLButtonElement>) => {
+        if(e.currentTarget.name === 'from'){
+            setFrom(activeTokens[0].balance ? (parseFloat(activeTokens[0].balance.toString())/1E18).toString():'0')
+        }else{
+            setTo(activeTokens[1].balance ? (parseFloat(activeTokens[1].balance.toString())/1E18).toString():'0')
+        }
+    }
+
+    const checkBalanceOverflow = (val:string, x:string) =>{
+        const v = BigNumber.from(val)
+        if(x==='from' && activeTokens[0].balance){
+            console.log(v.gt(activeTokens[0].balance))
+        }
+    }
+
+    const handleValueInput = (e:ChangeEvent<HTMLInputElement>) => {
+        if(e.target.name==="from"){
+            setFrom(e.target.value)
+        }else{
+            setTo(e.target.value)
+        }
+    }
+
 
     const bg = useColorModeValue('white', "#24274d")
     const bgDark = useColorModeValue('#f2f6fa', "#15163a")
@@ -64,13 +90,13 @@ const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
                             <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
                                 From
                             </Text>
-                            <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
+                            <Button variant="link" fontSize="md" opacity="50%" marginBottom="1rem" onClick={handleMax} name="from">
                                 Balance: {activeTokens[0].balance? (parseFloat(activeTokens[0].balance.toString())/1E18).toFixed(activeTokens[0].decimals) : 'Cannot get balance'}
-                            </Text>
+                            </Button>
                         </HStack>
                         <HStack bg={bgDark} spacing="1rem" minWidth="full" justifyContent="space-between"  border="1px solid" borderColor="gray.500" borderRadius="xl" p="0.5rem" alignItems="center" >
-                            <NumberInput placeholder="0.0" w="80%" borderRight="1px solid">
-                                <NumberInputField border="none" fontSize="2xl" placeholder="0.00" _placeholder={{color: '#888'}} _focus={{outline: 'none'}} />
+                            <NumberInput placeholder="0.0" w="80%" borderRight="1px solid" value={from} name="from">
+                                <NumberInputField border="none" fontSize="2xl" placeholder="0.00" _placeholder={{color: '#888'}} _focus={{outline: 'none'}} onChange={handleValueInput} name="from" />
                             </NumberInput>
                                 
                             <Button onClick={onFirstOpen} size="lg" bg="transparent" _hover={{bg:'transparent', color: 'purple'}} _active={{bg:'transparent'}} w="40%">
@@ -95,13 +121,13 @@ const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
                             <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
                                 To
                             </Text>
-                            <Text colorScheme="gray" fontSize="md" opacity="50%" marginBottom="1rem">
+                            <Button variant="link" fontSize="md" opacity="50%" marginBottom="1rem" onClick={handleMax} name="to">
                                 Balance: {activeTokens[1].balance? (parseFloat(activeTokens[1].balance.toString())/1E18).toFixed(activeTokens[1].decimals) : 'Cannot get balance'}
-                            </Text>
+                            </Button>
                         </HStack>
                         <HStack bg={bgDark} spacing="1rem" minWidth="full" justifyContent="space-between"  border="1px solid" borderColor="gray.500" borderRadius="xl" p="0.5rem" alignItems="center">
-                            <NumberInput placeholder="0.0" w="80%" borderRight="1px solid">
-                                <NumberInputField border="none" fontSize="2xl" placeholder="0.00" _placeholder={{color: '#888'}} _focus={{outline: 'none'}} />
+                            <NumberInput placeholder="0.0" w="80%" borderRight="1px solid" value={to}>
+                                <NumberInputField border="none" fontSize="2xl" placeholder="0.00" _placeholder={{color: '#888'}} _focus={{outline: 'none'}} onChange={handleValueInput} name="to" />
                             </NumberInput>
                                 
                             <Button onClick={onSecondOpen} size="lg" bg="transparent" _hover={{bg:'transparent', color: 'purple'}} _active={{bg:'transparent'}} w="40%">
@@ -114,6 +140,10 @@ const SwapWidget = ({onFirstOpen, onSecondOpen, onSettingsOpen}:Props) => {
                                 </HStack>
                             </Button>
                         </HStack>
+                        {
+                            <Text fontWeight="bold" color="red">Not enough balance</Text>
+
+                        }
                     </Box>
                     <HStack justifyContent="space-between" w="100%">
                         <Text fontSize="md">

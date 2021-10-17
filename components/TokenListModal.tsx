@@ -1,5 +1,5 @@
 import { QuestionIcon } from '@chakra-ui/icons'
-import { Box, Button, Modal, ModalOverlay, Divider, ModalContent, ModalHeader, Input, Image, HStack, ModalBody, ModalCloseButton, List, ListItem, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Modal, ModalOverlay, Divider, ModalContent, ModalHeader, Input, Image, HStack, ModalBody, Spinner, ModalCloseButton, List, ListItem, Text, useColorModeValue } from '@chakra-ui/react'
 import { MouseEvent, useContext } from 'react'
 import { activeTokenContext, tokenContext } from '../context/Context'
 
@@ -48,12 +48,19 @@ const TokenListModal = ({n, isOpen, onClose}:Props) => {
                             {
                                 tokens.map((token, i) => (
                                     <ListItem paddingY="1.5rem" justifyContent="left" paddingX="1.5rem" w="full" aria-label={String(i)} key={i} opacity={activeTokens.includes(token) ? "50%" : "100%"} cursor={activeTokens.includes(token) ? 'initial': 'pointer'} _hover={activeTokens.includes(token) ? {bg: 'transparent'} : {bg: bgDark}} onClick={handleTokenSelect}>
-                                        <HStack spacing="2">
-                                            <Image src={token.img} alt={token.symbol} boxSize="20px" borderRadius="full"/>
-                                            <Text>
-                                                {token.symbol}
-                                            </Text>
-                                        </HStack>
+                                        <HStack justifyContent="space-between">
+                                            <HStack spacing="2">
+                                                <Image src={token.img} alt={token.symbol} boxSize="20px" borderRadius="full"/>
+                                                <Text>
+                                                    {token.symbol}
+                                                </Text>
+                                            </HStack>
+                                            {
+                                                token.balance?
+                                                <Text>{(parseFloat(token.balance.toString())/1E18).toFixed(8)}</Text>
+                                                :<Spinner/>
+                                            }
+                                        </HStack>   
                                     </ListItem>
                                 ))
                             }
